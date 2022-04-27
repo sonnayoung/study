@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>끝말잇기</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div><span id="order">1</span>번째 참가자</div> 
+    <div>제시어: <span id="word"></span></div>
+    <input type="">
+    <button type="button">입력</button>
+
+    <script>
+        const number = parseInt(prompt('몇 명이 참가하나요?'), 10);
+        const $button = document.querySelector('button');
+        const $input = document.querySelector('input');
+        const $word = document.querySelector('#word');
+        const $order = document.querySelector('#order');
+        let word;//제시어
+        let newWord;//새로입력한단어
+
+        document.querySelector('input').addEventListener('input', (event) => {
+            newWord = event.target.value;
+            //console.log('글자입력', event.target.value)//입력한게 바로보임
+        });// 화살표함수
+        
+        
+        const onClickButton = () => {
+            if(!word){//제시어가 비어있는가?
+                word = newWord;
+                $word.textContent = word;
+                $input.value = '';
+                
+                const order = parseInt($order.textContent);//현재순서
+                if(order + 1 > number){
+                    $order.textContent = 1;
+                }else{
+                    $order.textContent = order + 1;
+                }
+
+            }else {
+                //비어있지않다.
+                if(word[word.length - 1] === newWord[0]){//올바를때
+                    word = newWord;
+                    $word.textContent = word;
+                    $input.value = '';
+
+                    const order = parseInt($order.textContent);//현재순서
+                    if(order + 1 > number){
+                        $order.textContent = 1;
+                    }else{
+                        $order.textContent = order + 1;
+                    }
+                }else{
+                    alert("틀렸습니다")
+                }
+            }
+        }
+        $button.addEventListener('click', onClickButton); 
+
+        document.querySelector('input').addEventListener('input', function(){
+            //console.log('글자입력')
+        });
+    </script>
+</body>
+</html>
