@@ -17,55 +17,51 @@
 
     <script>
         const number = parseInt(prompt('몇 명이 참가하나요?'), 10);
-        const $button = document.querySelector('button');
-        const $input = document.querySelector('input');
-        const $word = document.querySelector('#word');
-        const $order = document.querySelector('#order');
-        let word;//제시어
-        let newWord;//새로입력한단어
 
-        document.querySelector('input').addEventListener('input', (event) => {
-            newWord = event.target.value;
-            //console.log('글자입력', event.target.value)//입력한게 바로보임
-        });// 화살표함수
-        
-        
-        const onClickButton = () => {
-            if(!word){//제시어가 비어있는가?
-                word = newWord;
-                $word.textContent = word;
-                $input.value = '';
-                
-                const order = parseInt($order.textContent);//현재순서
-                if(order + 1 > number){
-                    $order.textContent = 1;
-                }else{
-                    $order.textContent = order + 1;
-                }
+        if(number){
+            const $button = document.querySelector('button');
+            const $input = document.querySelector('input');
+            const $word = document.querySelector('#word');
+            const $order = document.querySelector('#order');
+            let word;//제시어
+            let newWord;//새로입력한단어
 
-            }else {
-                //비어있지않다.
-                if(word[word.length - 1] === newWord[0]){//올바를때
-                    word = newWord;
-                    $word.textContent = word;
-                    $input.value = '';
+            document.querySelector('input').addEventListener('input', (event) => {
+                newWord = event.target.value;
+                //console.log('글자입력', event.target.value)//입력한게 바로보임
+            });// 화살표함수
+            
+            
+            const onClickButton = () => {
+                if(!word || word[word.length - 1] === newWord[0]){//제시어가 비어있는가? 또는 올바를때
+                    if(newWord.length === 3){
+                        word = newWord;
+                        $word.textContent = word;
+                        console.log(newWord.length)
 
-                    const order = parseInt($order.textContent);//현재순서
-                    if(order + 1 > number){
-                        $order.textContent = 1;
+                        const order = parseInt($order.textContent);//현재순서
+                        if(order + 1 > number){
+                            $order.textContent = 1;
+                        }else{
+                            $order.textContent = order + 1;
+                        }
                     }else{
-                        $order.textContent = order + 1;
+                        alert("쿵쿵따는 3자리만 가능합니다.");
                     }
+                    
                 }else{
-                    alert("틀렸습니다")
+                    alert("틀렸습니다");
                 }
+                $input.value = '';
+                $input.focus();
             }
-        }
-        $button.addEventListener('click', onClickButton); 
+            $button.addEventListener('click', onClickButton); 
 
-        document.querySelector('input').addEventListener('input', function(){
-            //console.log('글자입력')
-        });
+            document.querySelector('input').addEventListener('input', function(){
+                //console.log('글자입력')
+            });
+        }
+        
     </script>
 </body>
 </html>
