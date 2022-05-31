@@ -56,9 +56,9 @@
             paper : -1,
         };
         //버그 : clickVutton 5번 연달아 호출할시. 일터벌 1번,2번,3번,4번,5번(에만 IntervalId가 저장됨.덮어씌워져서). 그다음에 그 번튼을 클릭하면 5번만 취소됨
-        //버그고치기 방법 1 : setTimeout안에서도 clearInterval(intervalId); 를해줌 *이해안가냐뇨.ㅠㅠ
+        //버그고치기 방법 1 : setTimeout안에서도 clearInterval(intervalId); 두개 실행시간이 다르다. *이해안가냐뇨.ㅠㅠ
         //방법2 : 이벤트 전달을 아예 제거해버리고 다시 실행해주고 (removeEventListener사용시 주의점 : 함수끼리 비교하면 false이므로 변수에 넣어서 사용한다.)
-        //방법3 : 플래그 변수 사용
+        //방법3 : 플래그 변수 사용. 클릭은 계속되나 false인 동안에는 함수실행이 안되게
         let clickable = true;
         let score = 0;
         const clickButton = () => {
