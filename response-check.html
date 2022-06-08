@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응속도</title>
+    <style>
+        #screen {width: 300px;height: 200px;padding-top:20px;text-align: center;user-select: none;}
+        #screen.waiting {background-color: aquamarine;}
+        #screen.ready {background-color: red;color: #fff;}
+        #screen.now {background-color: greenyellow;}
+    </style>
+</head>
+<body>
+    
+    <div id="screen" class="waiting">클릭해서 시작하세요.</div>
+    <div id="result"></div>
+    <script>
+        //태그.classList.add('클래스'); 추가하는것 addClass
+        //태그.classList.replace('기존클래스', '수정클래스'); 수정,대체
+        //태그.classList.remove('클래스'); 제거 removeClass
+
+        //new Date(2021, 2 , 31); wed Mar 31 2021 은 0부터 시작함 
+        //new Date().getFullYear()
+        //new Date().getMonth()
+        //new Date().getDate()
+        //new Date().getHours()
+        //new Date().getMinutes()
+        //new Date().getSeconds()
+        //new Date().getMilliseconds()
+        //new Date().setDate()
+
+        //const diff = new Date(2021, 2, 3) - new Date(2021, 1, 21);
+        //console.log(diff / 1000밀리초 / 60초 / 60분 / 24시간) 날짜계산
+
+        const $screen = document.querySelector('#screen');
+        const $result = document.querySelector('#result');
+
+        let startTime;
+        let endTime;
+        //밖으로 빼주는 이유는 let은 블록스코프기 때문. 클릭이벤트안에서 안쓰는이유는 if문 실행되면 함수가 끝나기때문에.
+
+        const records = [];
+        let timeoutId;
+        $screen.addEventListener('click', (event) => {
+            if(event.target.classList.contains('waiting')){
+                $screen.classList.remove('waiting');
+                $screen.classList.add('ready');
+                $screen.textContent = '초록색이 되면 클릭하세요.';
+                timeoutId = setTimeout(function(){
+                
+                    startTime = new Date();//첫시간재기
+                    $screen.classList.remove('ready');
+                    $screen.classList.add('now');
+                    $screen.textContent = '클릭하세요!';
+                    
+                }, Math.floor(Math.random() * 1000) + 2000); //2000~3000사이의수 2초~3초
+                // (0 * 1000) + 2000 <= (x * 1000) + 2000 < (1 * 1000) + 2000
+
+            }else if(event.target.classList.contains('ready')){
+                clearTimeout(timeoutId)
+                $screen.classList.remove('ready');
+                $screen.classList.add('waiting');
+                $screen.textContent = '너무 성급하시군요!';
+
+            }else if(event.target.classList.contains('now')){
+                endTime = new Date();// 끝시간재기
+                const current = endTime - startTime;
+                records.push(current);
+                const average = records.reduce((a, c) => a + c) / records.length; //평균을 구하는 함수
+                $result.textContent = `현재 ${current}ms, 평균 : ${average}ms`; //시간차이 저장하기
+                startTime = null;
+                endTime = null; //굳이안해줘도 되지만 혹시 예전값이 있을때를 대비함
+                $screen.classList.remove('now');
+                $screen.classList.add('waiting');
+                $screen.textContent = '클릭해서 시작하세요.';
+            }
+        })
+
+        //reduce : 배열을 조작할때 쓰임 배열->객체로 바꿈
+        //[1,2,3,4].reduce((a,c,i) => (a + c), 0) /여기서 a는 누적값, c는 현재값, i는 인덱스, 0은초기값 : 초기값안넣으면 첫번째값이 초기값
+    </script>
+</body>
+</html>
