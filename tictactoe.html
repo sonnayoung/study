@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>틱택토 게임</title>
+    <style>
+        table{border-collapse: collapse;}
+        td {border: 1px solid #000;width: 40px;height: 40px;text-align: center;cursor: pointer;}
+    </style>
+</head>
+<body>
+    <script>
+
+        const { body } = document; //구조분해할당(destructuring):속성명과 변수명이 같을때 사용하는것 const body = document.body; 랑 같음.새로운 문법. createElement은 구조분해할당안됨
+        
+        const $table = document.createElement('table');
+        const $result = document.createElement('div'); // 결과창
+        const rows = [];
+
+        let turn = 'O';
+        // [
+        //   [td, td, td],
+        //   [td, td, td],
+        //   [td, td, td],
+
+        // ]
+        // const data = [];
+        // for(let i = 0; i < 3; i++){ //이차원배열...
+        //     data.push([]);
+        // }
+
+        const checkWinner = (target) => { //target은 내가 클릭한 td
+            // let rowIndex;
+            // let cellIndex;
+            // rows.forEach((row, ri) => { forEach배열반복문
+            //     row.forEach((cell, ci) => {
+            //         if (cell === target) {
+            //             console.log(ri, ci)
+            //             rowIndex = ri;
+            //             cellIndex = ci
+            //         }
+            //     });
+            // });
+            const rowIndex = target.parentNode.rowIndex; //tr의 갯수
+            const cellIndex = target.cellIndex;
+
+            //세칸 다 채워졌나
+            let hasWinner = false;
+            //가로줄검사
+            if(
+                rows[rowIndex][0].textContent === turn &&
+                rows[rowIndex][1].textContent === turn &&
+                rows[rowIndex][2].textContent === turn
+            ){
+                hasWinner = true;
+            }
+            //세로줄검사
+            if(
+                rows[0][cellIndex].textContent === turn &&
+                rows[1][cellIndex].textContent === turn &&
+                rows[2][cellIndex].textContent === turn
+            ){
+                hasWinner = true;
+            }
+            //대각선 검사
+            if(
+                rows[0][0].textContent === turn &&
+                rows[1][1].textContent === turn &&
+                rows[2][2].textContent === turn
+            ){
+                hasWinner = true;
+            }
+            if(
+                rows[0][2].textContent === turn &&
+                rows[1][1].textContent === turn &&
+                rows[2][0].textContent === turn
+            ){
+                hasWinner = true;
+            }
+            return hasWinner;
+
+        }
+        
+        const callback = (e) => {
+            //칸에 글자가있으면 멈춰버리게함 실행되게마자 종료하게함.
+            if(e.target.textContent){
+                console.log('빈칸이 아닙니다.')
+                return;
+            } 
+            console.log('빈칸입니다.')
+            e.target.textContent = turn;
+
+            //승부확인
+            const hasWinner = checkWinner(e.target)
+            if(hasWinner){
+                $result.textContent = `${turn}님이 승리!`;
+                $table.removeEventListener('click', callback);
+                return;
+            }
+            //무승부 검사
+            // let draw = true;
+            // rows.forEach((row) => {
+            //     row.forEach((cell)=>{
+            //         if(!cell.textContent){
+            //             draw = false; //무승부는 칸이 꽉차있으면.
+            //         }
+            //     });
+            // });
+            const draw = rows.flat().every((cell)=> cell.textContent);
+            //every는 모두다 돼야 true 하나만 false면 false임. 그래서 반복해서 다 찾지않음. 근데 1차원 배열만 사용가능함. 그래서 써주는게 rows.flat() 배열을 한차원씩 낮춰줌
+            //some 은 하나라도 ture면 ture임.
+            if(draw){//칸이 꽉차면
+                $result.textContent = '무승부';
+                return;
+            }
+            // if(turn === 'O'){
+            //     turn = 'X';
+            // }else if(turn === 'X'){
+            //     turn = 'O';
+            // }
+            turn = (turn === 'O' ? 'X' : 'O');
+        }
+        
+        for(let i = 0; i < 3; i++){
+            const $tr = document.createElement('tr');
+            const cells = [];
+            for(let j = 0; j < 3; j++){
+                const $td = document.createElement('td');
+                cells.push($td);
+                $tr.append($td);
+            }
+            rows.push(cells);
+            $table.append($tr);
+            
+        }
+        $table.addEventListener('click', callback);
+        body.append($table);
+        body.append($result);
+        
+        //구조분해할당 예시1
+        const arr = [1,2,3,4,5];
+        // const one = arr[0];
+        // const tow = arr[1];
+        // const three = arr[2];
+        // const four = arr[3];
+        // const five = arr[4];
+        const [one, two, three, , five] = arr; //로 배열도 사용할 수 있다. 컴마로 자리는 무조건 맞춰주면 알아서 적용됨.. =구조분해할당
+
+        //구조분해할당 예시2
+        const obj = {
+            a:'hello',
+            b:{
+                c: 'hi',
+                d: {e: 'wow'},
+            },
+        }
+        const {a, b:{c,d:{e}}} = obj; //a,c,e 만 변수가됨.말단?
+
+        //이벤트버블링:자식에 이벤트가 발생하면 이어서 부모 요소의 핸들러가 작동하는것.이벤트버블링을 막고싶다. event.stopPropatation; 반대는 캡쳐링 잘안씀
+        // 진짜 선택한 애한테 이벤트를 주려면 event.currentTarget
+    </script>
+</body>
+</html>
