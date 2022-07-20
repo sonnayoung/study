@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또추첨기</title>
+    <style>
+        .ball {
+            display: inline-block;
+            border: 1px solid black;
+            border-radius:50%;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 20px;
+            text-align: center;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="result">추첨 결과는? </div>
+    <div id="bonus">보너스 :  </div>
+    <script>
+        //sort : 배열.sort(비교 함수)
+        //arr = ['apple', 'orange', 'grape', 'banana' , 'kiwi']
+        //arr를 정렬하려면 arr.slice().sort((a,b) => a[0].charCodeAt() - b[0].charCodeAt()) //오름차순 첫번째글자의 코드넘버끼리 비교 후 정렬
+        //arr.slice().sort((a,b) => b[0].charCodeAt() - a[0].charCodeAt()) //내림차순
+        //arr.slice().sort((a,b) => a.localeCompare(b)) //사전순으로 정렬
+
+        //var와 let의 차이 / 스코프 : 변수의 접근가능한 범위
+        //var : 함수 스코프 
+        //let : 블록{} 스코프 
+        //함수스코프를 가진 var와 비동기함수인 setTimeout이 만나면 클로저문제가 발생한다. 
+
+        const candidate = Array(45).fill().map((v, i) => i + 1);
+        //Array(45) 이런식으로 45개의 요소를 가진배열을 만들어줌.원하는길이
+        //Array(45).fill() 이렇게하면 undefined인 45개가 됨.원하는걸 채움
+        //Array(45).fill().map((v, i) => i + 1); v = 요소, i는 인덱스, 인덱스는 0부터 시작하기 때문에 1을 추가해줘야함
+        const shuffle = [];
+        while (candidate.length > 0){
+            const random = Math.floor(Math.random() * candidate.length); //무작위 인덱스 뽑기
+            const spliceArray = candidate.splice(random, 1);//뽑은 값은 배열에 들어 있음
+            const value = spliceArray[0]; //배열에 들어있는 값을 꺼내어
+            //console.log(spliceArray) 배열임.
+            shuffle.push(value); //shuffle 배열에 넣기
+        } //피셔 예이츠 셔플 : 숫자를 무작위로 섞는 알고리즘
+        console.log(shuffle);
+        
+        const winBalls = shuffle.slice(0,6).sort((a,b) => a - b); //slice(첫인덱스,끝인덱스)는 원본수정안함,추가못함 splice(인덱스, 갯수)는 원본수정 //sort는 원본수정
+        const bonus = shuffle[6];
+        console.log(winBalls, bonus);
+
+        //볼이 1초뒤에 나오게하기
+        const $result = document.querySelector('#result');
+        
+
+        const drawBall = (number, $patent) => {
+            const $ball = document.createElement('div');
+            $ball.className = 'ball';
+            $ball.textContent = number;
+            $patent.appendChild($ball);
+        };
+
+        for(let i = 0; i < winBalls.length; i++){ //동기요..? 
+            setTimeout(() => {
+                console.log(winBalls[i], i)//let아니고 var로 바꾸면 undefined 6 으로나옴 동기비동기라... 근데 let은 블록({})스코프라서 비동기인 setTimeout의 i가 고정됨
+                drawBall(winBalls[i], $result)
+            },1000 * (i + 1));//비동기...?요??
+        }
+
+        //var를 꼭 쓰고싶으면 이렇게 
+        // for(var i = 0; i < winBalls.length; i++){
+        //     (function(j){
+        //         setTimeout(() => {
+        //             console.log(winBalls[j], j)
+        //             drawBall(winBalls[j], $result)
+        //         },1000 * (i + 1));
+        //     })(i);
+        // }
+
+        const $bonus = document.querySelector('#bonus');
+        setTimeout(() => {
+            drawBall(bonus, $bonus)
+        },7000);
+    </script>
+</body>
+</html>

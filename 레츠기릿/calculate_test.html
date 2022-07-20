@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+</head>
+<body>
+    
+    <script>
+        //1. if문 다음에 나오는 공통된 절차를 각 분기점 내부에 넣는다.
+        //2, 분기점에서 짧은 절차부터 실행하게 if문을 작성한다.
+        //3. 짧은 절차가 끝나면 return(함수내부의경우)이나 break(for문 내부의 경우)로 중단한다.
+        //4.else를 제거한다.(이때 중첩 하나가 제거된다.)
+        // function test(){
+        //     let result = '';
+        //     if(a){
+        //         if(!b){
+        //             result = 'c';
+        //         }
+        //     }else{
+        //         result = 'a';
+        //     }
+        //     result += 'b';
+        //     return result;
+        // }
+
+        function test(){
+            let result = '';
+            if(!a){
+                result = 'a';
+                result += 'b';
+                return result;
+            }
+            if(!b){
+                result = 'c';
+            }
+            result += 'b';
+            return result;
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+< git 터미널이랑 git hub 연결하기 >
+1. https://git-scm.com/ 에서 GIT download하기
+2. vs-code 또는 web-storm에서 터미널 오픈 => 터미널에 git 입력해보기
+3. 작업할 폴더를 만들고, 프로젝트 불러오기
+4. git config 설정하기
+  - https://git-scm.com/book/ko/v2/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-Git-%EC%B5%9C%EC%B4%88-%EC%84%A4%EC%A0%95
+5. github 계정 생성하기
+6. github repository 만들기
+7. code에서 ssh 눌러 과정대로 작업해보기
+  + ssh 생성하기(https://www.lainyzine.com/ko/article/creating-ssh-key-for-github/)
+8. git pull로 연결
+
+
+lainyzine.com/ko/article/creating-ssh-key-for-github/ 참고하기
+
+터미널순서
+1. cd ~/.ssh로 연결되어있는지 확인하기 (처음에는 연결안된게 맞음)
+2. $ ssh-keygen -t ed25519 -C "son2068@naver.com" 엔터엔터엔터 쭉 누르기
+3. 이미지같은게 뜨면 완성
+4. cat id_ed25519.pub 엔터해서 
+ 내 공개키발급 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG8rYiz7O1qv1kz0y3RDCAgcS5YLGaTjcDV7OiOh8R9K son2068@naver.com
+5. 공개키를 github에서 [프로필 > settings > SSH and GPG keys > new SSH key] 들어가서 키 넣고 생성
+6. git init후  git remote add origin git@github.com:sonnayoung/hs_study.git ->내 깃허브 ssh code
+7. git add .
+8. git commit -am '커밋내용'
+9. git push 
+
+
+브런치

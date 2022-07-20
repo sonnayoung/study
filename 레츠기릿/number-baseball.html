@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자야구</title>
+</head>
+<body>
+<form id="form">
+    <input type="text" id="input">
+    <button>확인</button>
+</form>
+<div id="logs"></div>
+<script>
+    //Math.floor(Math.random() * 9 +1) 으로 랜덤한 숫자 구하기 //0 *9+1<= Math.random()*9+1 < 1*9+1 //Math.floor는 내림함수
+    const $input = document.querySelector('#input');
+    const $form = document.querySelector('#form');
+    const $logs = document.querySelector('#logs');
+
+    const numbers = [];//123
+    for(let n=0;n<9;n+=1){
+        numbers.push(n+1)
+    }
+    const answer = [];
+    for(let n=0;n<4;n+=1){//네번반복
+        const index = Math.floor(Math.random() * numbers.length); //0-8정수 :배열은 0부터 시작하니까 //9-n을 해주는 이유는 answer배열에 추가되면서 number배열의 갯수가 작아지므로
+        answer.push(numbers[index]);
+        numbers.splice(index,1); //numbers배열에 있는 애를 뺴줌 안겹치게
+    }
+    console.log(answer);
+
+    const tries = [];
+    function checkInput(input){
+        if(input.length !== 4){//4개입력을 안했을떄
+            return alert('4자리 숫자를 입력해 주세요.');
+        }
+        if(new Set(input).size !== 4){//중복일때 //new set중복을 알아서제거해줌 124
+            return alert('중복되지 않게 입력해 주세요.');
+        }
+        if(tries.includes(input)){// 이미 시도한값일떄
+            return alert('이미 시도한 값입니다.');
+        }
+        return true; //alert 리턴값이 undefined고 if문안에들어가면 false가됨
+    }//검사하는코드
+
+    $form.addEventListener('submit', (event) => { //새로고침후 주소창에?것이 생기고 버튼클릭했을때 작동됨
+        console.log("answer");
+        event.preventDefault();// 기본동작막기
+        const value = $input.value; //event.targer[0] 으로 가능
+        $input.value = '';
+        if(!checkInput(value)){
+            return;
+        }
+        //입력값문제없음
+        if(answer.join('') === value){ //join:배열[1,2,3,4]->문자열/기본은,라서 ''해줌
+            $logs.textContent = '홈런!';
+            return;
+        }
+        if(tries.length >= 9){
+            const message = document.createTextNode(`패배! 정답은 ${answer.join('')}`);
+            $logs.appendChild(message);
+            return;
+        }
+        //몇 스트라이크 몇볼인지 검사
+        let strike = 0;
+        let ball = 0;
+        for(let i =0; i<answer.length;i++){
+            const index = value.indexOf(answer[i]);
+            if(index > -1){//일치하는 숫자발견
+                if(index === i){//자리도 같음
+                    strike += 1;
+                }else{//숫자만 같음
+                    ball += 1;
+                }
+            }
+        }
+        $logs.append(`${value} : ${strike} 스트라이트 ${ball} 볼`, document.createElement('br')); //${}변수를 문자열 안에 쓰는 방법
+
+
+        tries.push(value);
+
+    });
+
+    //incluedes(5)는 5가있는지없는지 true,false 반환
+    //indexOf(3)은 있으면 1 없으면 -1 이고 어디에있는지 알려줌 *자료형도 같아야함
+    //document.createElement, document.createTextNode : 각각 태그와 텍스트를 만드는 메서드. 단, append나 appendChild 하기전에는 화면에 보이지않음
+</script>
+</body>
+</html>
