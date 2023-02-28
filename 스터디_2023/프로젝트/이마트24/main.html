@@ -16,6 +16,7 @@
 	<meta property="og:type" content="website">
     <link rel="shortcut icon" href="/common/favicon.ico">
     <link rel="icon" href="/common/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./css/defalut.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <title>이마트24 - scss사용하기</title>
 </head>
@@ -26,83 +27,86 @@
     </div>
     <div id="wrapper">
         <header id="header">
-            <div class="logo">
-                <a href=""><img src="./images/logo.png" alt="이마트24 로고"></a>
-            </div>
-            <div class="gnb">
-                <ul>
-                    <li><a href="">고객센터</a></li>
-                    <li><a href="">이마트24 소개</a></li>
-                    <li><a href="">채용안내</a></li>
-                    <li><a href="">전자 계약 시스템</a></li>
-                </ul>
-            </div>
-            <div class="header_box"></div>
-            <div class="lnb">
-                <div class="lnb_topbox"></div>
-                <nav class="menu after eachdown">
-                    <h2 class="skip">메뉴</h2>
-                    <div class="depth depth1">
-                        <ul class="depth_list depth1_list clearfix">
-                            <li class="depth_item depth1_item">
-                                <a href="" class="depth_text depth1_text"><span>상품</span></a>
-                                <div class="depth depth2">
-                                    <ul class="depth_list depth2_list clearfix">
-                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>행사 상품</span></a></li>
-                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>차별화 상품</span></a></li>
-                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>Fresh Food</span></a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="depth_item depth1_item">
-                                <a href="" class="depth_text depth1_text"><span>매장찾기</span></a>
-                                <div class="depth depth2">
-                                    <ul class="depth_list depth2_list clearfix">
-                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>매장찾기</span></a></li>
-                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>3D 매장 체험</span></a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="depth_item depth1_item">
-                                <a href="" class="depth_text depth1_text"><span>서비스</span></a>
-                                <div class="depth depth2">
-                                    <ul class="depth_list depth2_list clearfix">
-                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>APP 서비스</span></a></li>
-                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>생활 서비스</span></a></li>
-                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>제휴 서비스</span></a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="depth_item depth1_item">
-                                <a href="" class="depth_text depth1_text"><span>이벤트</span></a>
-                                <div class="depth depth2">
-                                    <ul class="depth_list depth2_list clearfix">
-                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>진행중인 이벤트</span></a></li>
-                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>종료된 이벤트</span></a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="depth_item depth1_item">
-                                <a href="" class="depth_text depth1_text"><span>창업안내</span></a>
-                                <div class="depth depth2">
-                                    <ul class="depth_list depth2_list clearfix">
-                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>이마트24 특징</span></a></li>
-                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>창업 가이드</span></a></li>
-                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>창업 설명회</span></a></li>
-                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>창업 성공기</span></a></li>
-                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>창업 상담</span></a></li>
-                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>추천 매장 소개</span></a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
+            <div class="wrap">
+                <div class="logo">
+                    <div class="wrap">
+                        <a href=""><img src="./images/logo.png" alt="이마트24 로고"></a>
                     </div>
-                </nav>
-                <div class="menu_hide">
-                    <button type="button" class="menu_button">메뉴 닫기</button>
                 </div>
+                <div class="gnb">
+                    <ul>
+                        <li><a href="">고객센터</a></li>
+                        <li><a href="">이마트24 소개</a></li>
+                        <li><a href="">채용안내</a></li>
+                        <li><a href="">전자 계약 시스템</a></li>
+                    </ul>
+                </div>
+                <div class="lnb">
+                    <div class="lnb_topbox"></div>
+                    <nav class="menu after eachdown">
+                        <h2 class="skip">메뉴</h2>
+                        <div class="depth depth1">
+                            <ul class="depth_list depth1_list clearfix">
+                                <li class="depth_item depth1_item">
+                                    <a href="" class="depth_text depth1_text"><span>상품</span></a>
+                                    <div class="depth depth2">
+                                        <ul class="depth_list depth2_list clearfix">
+                                            <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>행사 상품</span></a></li>
+                                            <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>차별화 상품</span></a></li>
+                                            <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>Fresh Food</span></a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="depth_item depth1_item">
+                                    <a href="" class="depth_text depth1_text"><span>매장찾기</span></a>
+                                    <div class="depth depth2">
+                                        <ul class="depth_list depth2_list clearfix">
+                                            <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>매장찾기</span></a></li>
+                                            <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>3D 매장 체험</span></a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="depth_item depth1_item">
+                                    <a href="" class="depth_text depth1_text"><span>서비스</span></a>
+                                    <div class="depth depth2">
+                                        <ul class="depth_list depth2_list clearfix">
+                                            <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>APP 서비스</span></a></li>
+                                            <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>생활 서비스</span></a></li>
+                                            <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>제휴 서비스</span></a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="depth_item depth1_item">
+                                    <a href="" class="depth_text depth1_text"><span>이벤트</span></a>
+                                    <div class="depth depth2">
+                                        <ul class="depth_list depth2_list clearfix">
+                                            <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>진행중인 이벤트</span></a></li>
+                                            <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>종료된 이벤트</span></a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="depth_item depth1_item">
+                                    <a href="" class="depth_text depth1_text"><span>창업안내</span></a>
+                                    <div class="depth depth2">
+                                        <ul class="depth_list depth2_list clearfix">
+                                            <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>이마트24 특징</span></a></li>
+                                            <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>창업 가이드</span></a></li>
+                                            <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>창업 설명회</span></a></li>
+                                            <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>창업 성공기</span></a></li>
+                                            <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>창업 상담</span></a></li>
+                                            <li class="depth_item depth2_item clearfix"><a href="" target="_blank" class="depth_text depth2_text"><span>추천 매장 소개</span></a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="menu_hide">
+                        <button type="button" class="menu_button">메뉴 닫기</button>
+                    </div>
+                </div>
+                <div class="lnb_curtain"><button type="button">메뉴 닫기</button></div>
             </div>
-            <div class="lnb_curtain"><button type="button">메뉴 닫기</button></div>
         </header>
         <main id="container">
             <section class="visual">

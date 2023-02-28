@@ -1,17 +1,90 @@
-/* Error: unmatched "}".
- *   ,
- * 8 | }
- *   | ^
- *   '
- *   css\style.scss 8:1  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: unmatched "}".\a   \2577 \a 8 \2502  }\d\a   \2502  ^\a   \2575 \a   css\\style.scss 8:1  root stylesheet';
+@charset "UTF-8";
+/* 초기화 */
+a:link {
+  color: #555;
+  text-decoration: none;
 }
+
+a:visited {
+  color: #555;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #555;
+  text-decoration: none;
+}
+
+a:focus {
+  text-decoration: underline;
+}
+
+a:active {
+  color: #555;
+  text-decoration: none;
+}
+
+#wrapper {
+  position: relative;
+  min-width: 1280px;
+  overflow: hidden;
+}
+
+.wrap {
+  position: relative;
+  width: 1280px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 0;
+  line-height: 0;
+}
+
+.accessibility {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+.accessibility a {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  height: 0;
+  text-align: center;
+}
+.accessibility a:focus {
+  height: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #000;
+  color: #fff;
+}
+
+.logo a {
+  width: 113px;
+  height: 20px;
+}
+
+.gnb {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.gnb li {
+  display: inline-block;
+}
+.gnb li a {
+  font-size: 12px;
+  line-height: 20px;
+  color: #999;
+  letter-spacing: -0.025em;
+}
+.gnb li a:hover {
+  color: #f9bb00;
+}
+.gnb li + li {
+  margin-left: 20px;
+}/*# sourceMappingURL=style.css.map */

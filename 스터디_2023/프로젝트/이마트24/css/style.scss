@@ -1,8 +1,63 @@
 @charset "UTF-8";
 
-.hello{
-    background-color: rgb(214, 228, 92);
-    font-size: 20px;
-    color: red;
+/* 초기화 */
+a:link{color:#555; text-decoration:none;}
+a:visited{color:#555; text-decoration:none;}
+a:hover{color:#555; text-decoration:none;}
+a:focus{text-decoration:underline;}
+a:active{color:#555; text-decoration:none;}
+#wrapper{position:relative; min-width:1280px; overflow:hidden;}
+.wrap{position:relative;width:1280px;margin:0 auto;}
+
+h1{font-size: 0;line-height: 0;}
+
+.accessibility{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index: 9999;
+    a{
+        display: block;
+        overflow: hidden;
+        position: relative;
+        height: 0;
+        text-align: center;
+        &:focus{
+            height:auto; 
+            padding-top:5px; 
+            padding-bottom:5px; 
+            background-color:#000; 
+            color:#fff;}
+    }
 }
 
+.logo{
+    a{
+        width:113px;
+        height: 20px;
+    }
+    
+}
+
+.gnb {
+    position: absolute;
+    top:0;
+    right: 0;
+    li{
+        display: inline-block;
+        a{
+            font-size:12px;
+            line-height: 20px;
+            color:#999;
+            letter-spacing: -0.025em;
+            &:hover{
+                color: #f9bb00;
+            }
+        }
+        & + li{
+            margin-left: 20px;
+        }
+    }
+    
+}
