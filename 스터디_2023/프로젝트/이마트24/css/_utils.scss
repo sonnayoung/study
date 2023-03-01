@@ -1,0 +1,28 @@
+/*반응형 화면 크기*/
+$mobile: 640px;
+$tablet: 1000px;
+$desktop: 1280px;
+/*반응형, 브라우저 크기가 1280px 이상일때*/
+@mixin desktop{
+    @media (max-width: $desktop){
+        @content;
+    }
+}
+/*반응형, 브라우저 크기가 641이상, 1000px 이하일때*/
+@mixin tablet{
+    @media (max-width: $tablet){
+        @content;
+    }
+}
+
+
+/*반응형, 브라우저 크기가 640px 이하일때*/
+@mixin mobile{
+    @media (max-width: $mobile){
+        @content;
+    }
+}
+  
+ 
+  
+  

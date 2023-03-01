@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import './utils.scss';
 
 /* 초기화 */
 a:link{color:#555; text-decoration:none;}
@@ -10,6 +11,18 @@ a:active{color:#555; text-decoration:none;}
 .wrap{position:relative;width:1280px;margin:0 auto;}
 
 h1{font-size: 0;line-height: 0;}
+
+body{
+    @include desktop{
+        background-color: #1900f9;
+    }
+    @include tablet{
+        background-color: #00f999;
+    }
+    @include mobile{
+        background-color: #f9bb00;
+    }
+}
 
 .accessibility{
     position:fixed;

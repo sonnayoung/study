@@ -1,4 +1,8 @@
 @charset "UTF-8";
+/*반응형 화면 크기*/
+/*반응형, 브라우저 크기가 1280px 이상일때*/
+/*반응형, 브라우저 크기가 641이상, 1000px 이하일때*/
+/*반응형, 브라우저 크기가 640px 이하일때*/
 /* 초기화 */
 a:link {
   color: #555;
@@ -39,6 +43,22 @@ a:active {
 h1 {
   font-size: 0;
   line-height: 0;
+}
+
+@media (max-width: 1280px) {
+  body {
+    background-color: #1900f9;
+  }
+}
+@media (max-width: 1000px) {
+  body {
+    background-color: #00f999;
+  }
+}
+@media (max-width: 640px) {
+  body {
+    background-color: #f9bb00;
+  }
 }
 
 .accessibility {
