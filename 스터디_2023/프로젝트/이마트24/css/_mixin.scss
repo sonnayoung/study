@@ -1,0 +1,20 @@
+
+@mixin ellipsis($line: 1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @if ($line == 1) {
+      white-space: nowrap;
+    } @else {
+      display: -webkit-box;
+      -webkit-line-clamp: $line;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  // bg
+@mixin bg_img($size: null, $url: null) {
+    background-image: url($url);
+    background-position: center center;
+    background-size: $size;
+    background-repeat: no-repeat;
+  }

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import './utils.scss';
+@import './_variables.scss', './_mixin.scss';
 
 /* 초기화 */
 a:link{color:#555; text-decoration:none;}
@@ -10,20 +10,27 @@ a:active{color:#555; text-decoration:none;}
 #wrapper{position:relative; min-width:1280px; overflow:hidden;}
 .wrap{position:relative;width:1280px;margin:0 auto;}
 
-h1{font-size: 0;line-height: 0;}
 
-body{
-    @include desktop{
-        background-color: #1900f9;
-    }
-    @include tablet{
-        background-color: #00f999;
-    }
-    @include mobile{
-        background-color: #f9bb00;
-    }
+
+@include onlyPC{
+    body{background-color: burlywood;}
+}
+@include desktop{
+    body{background-color: #1900f9;}
+    #wrapper{min-width:1000px}
+    .wrap{width:1000px}
+    
+}
+@include tablet{
+    body{background-color: #00f999;}
+    #wrapper{min-width:94%}
+    .wrap{width:94%}
+}
+@include mobile{
+    body{background-color: #f9bb00;}
 }
 
+h1{font-size: 0;line-height: 0;}
 .accessibility{
     position:fixed;
     top:0;
@@ -73,4 +80,29 @@ body{
         }
     }
     
+}
+
+footer{
+    background-color: #f4f4f4;
+    font-size: 12px;
+    line-height: 20px;
+    .footer_link{
+        li{
+            display: inline-block;
+            a{
+                font-size: 12px;
+                color: #333;
+                font-weight: 300;
+            }
+            &:hover a{
+                color: $BrandColor;
+            }
+        }
+        li.privacy{
+            a{
+                font-weight: 500;
+            }
+            
+        }
+    }
 }

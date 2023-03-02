@@ -1,7 +1,8 @@
 @charset "UTF-8";
 /*반응형 화면 크기*/
-/*반응형, 브라우저 크기가 1280px 이상일때*/
-/*반응형, 브라우저 크기가 641이상, 1000px 이하일때*/
+/*반응형, 브라우저 크기가 1001px 이상일때*/
+/*반응형, 브라우저 크기가 1280px 이하일때*/
+/*반응형, 브라우저 크기가 1000px 이하일때*/
 /*반응형, 브라우저 크기가 640px 이하일때*/
 /* 초기화 */
 a:link {
@@ -40,25 +41,41 @@ a:active {
   margin: 0 auto;
 }
 
-h1 {
-  font-size: 0;
-  line-height: 0;
+@media (min-width: 1001px) {
+  body {
+    background-color: burlywood;
+  }
 }
-
 @media (max-width: 1280px) {
   body {
     background-color: #1900f9;
+  }
+  #wrapper {
+    min-width: 1000px;
+  }
+  .wrap {
+    width: 1000px;
   }
 }
 @media (max-width: 1000px) {
   body {
     background-color: #00f999;
   }
+  #wrapper {
+    min-width: 94%;
+  }
+  .wrap {
+    width: 94%;
+  }
 }
 @media (max-width: 640px) {
   body {
     background-color: #f9bb00;
   }
+}
+h1 {
+  font-size: 0;
+  line-height: 0;
 }
 
 .accessibility {
@@ -107,4 +124,24 @@ h1 {
 }
 .gnb li + li {
   margin-left: 20px;
+}
+
+footer {
+  background-color: #f4f4f4;
+  font-size: 12px;
+  line-height: 20px;
+}
+footer .footer_link li {
+  display: inline-block;
+}
+footer .footer_link li a {
+  font-size: 12px;
+  color: #333;
+  font-weight: 300;
+}
+footer .footer_link li:hover a {
+  color: #f9bb00;
+}
+footer .footer_link li.privacy a {
+  font-weight: 500;
 }/*# sourceMappingURL=style.css.map */

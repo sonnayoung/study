@@ -2,20 +2,25 @@
 $mobile: 640px;
 $tablet: 1000px;
 $desktop: 1280px;
-/*반응형, 브라우저 크기가 1280px 이상일때*/
+
+/*반응형, 브라우저 크기가 1001px 이상일때*/
+@mixin onlyPC{
+    @media (min-width: $tablet + 1){
+        @content;
+    }
+}
+/*반응형, 브라우저 크기가 1280px 이하일때*/
 @mixin desktop{
     @media (max-width: $desktop){
         @content;
     }
 }
-/*반응형, 브라우저 크기가 641이상, 1000px 이하일때*/
+/*반응형, 브라우저 크기가 1000px 이하일때*/
 @mixin tablet{
     @media (max-width: $tablet){
         @content;
     }
 }
-
-
 /*반응형, 브라우저 크기가 640px 이하일때*/
 @mixin mobile{
     @media (max-width: $mobile){
@@ -23,6 +28,12 @@ $desktop: 1280px;
     }
 }
   
+
+// 컬러
+$BrandColor:#f9bb00;
+$White:#fff;
+$Black:#000;
+
  
   
   
