@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap");
 /*반응형 화면 크기*/
 /*반응형, 브라우저 크기가 1001px 이상일때*/
 /*반응형, 브라우저 크기가 1280px 이하일때*/
@@ -39,6 +40,11 @@ a:active {
   position: relative;
   width: 1280px;
   margin: 0 auto;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
 }
 
 @media (min-width: 1001px) {
@@ -131,17 +137,48 @@ footer {
   font-size: 12px;
   line-height: 20px;
 }
+footer .footer_link {
+  font-size: 0;
+  line-height: 0;
+}
 footer .footer_link li {
   display: inline-block;
+  position: relative;
 }
 footer .footer_link li a {
+  padding: 0 10px;
   font-size: 12px;
+  line-height: 20px;
   color: #333;
   font-weight: 300;
 }
 footer .footer_link li:hover a {
   color: #f9bb00;
 }
+footer .footer_link li:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 7px;
+  width: 1px;
+  height: 8px;
+  background-color: #999;
+}
+footer .footer_link li:first-child a {
+  padding-left: 0;
+}
 footer .footer_link li.privacy a {
   font-weight: 500;
+}
+footer .family_site .layer {
+  overflow-y: scroll;
+  height: 160px;
+}
+footer .footer_con .title {
+  display: block;
+}
+footer .footer_con .text {
+  display: block;
+  margin-top: 50px;
 }/*# sourceMappingURL=style.css.map */
