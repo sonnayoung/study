@@ -133,6 +133,7 @@ h1 {
 }
 
 footer {
+  position: relative;
   background-color: #f4f4f4;
   font-size: 12px;
   line-height: 20px;
@@ -171,9 +172,34 @@ footer .footer_link li:first-child a {
 footer .footer_link li.privacy a {
   font-weight: 500;
 }
+footer .family_site {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+footer .family_site .family_btn:after {
+  display: block;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-image: url("../images/main_sprite.png");
+  background-position: -214px -56px;
+  background-repeat: no-repeat;
+}
 footer .family_site .layer {
+  display: none;
   overflow-y: scroll;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 170px;
   height: 160px;
+  background-color: #fff;
+}
+footer .family_site .layer li a {
+  padding: 8px 12px;
+  font-size: 15px;
+  line-height: 30px;
 }
 footer .footer_con .title {
   display: block;
