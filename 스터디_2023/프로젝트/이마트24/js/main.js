@@ -29,6 +29,54 @@ try {
                     };
                 });
 
+
+				var $visual = $('.visual'),
+					$visualSlide = $visual.find('.slide_list');
+
+
+
+				$visualSlide.slick({
+					autoplay : true,
+					dots : false,
+					swipe : false,
+					draggable : false,
+					slidesToShow : 1,
+					slidesToScroll: 1,
+					variableWidth: false,
+					infinite: true,
+					prevArrow : $('.visual .prev'),
+					nextArrow : $('.visual .next'),
+
+					//추가 기능
+					autoArrow : $('.visual .auto'),
+					isRunOnLowIE : false,
+					pauseOnArrowClick : true,
+					pauseOnDirectionKeyPush : true,
+					pauseOnSwipe : true,
+					pauseOnDotsClick : true,
+					pauseText : '정지',
+					playText : '재생',
+					current : $('.visual .current'),
+					total : $('.visual .total'),
+					responsive: [
+						{
+							breakpoint: 1001,
+							settings: {
+								swipe : true,
+								draggable : true
+							}
+						},
+						{
+							breakpoint: 641,
+							settings: {
+								slidesToShow : 1,
+								swipe : true,
+								draggable : true,
+								variableWidth: true,
+							}
+						}]
+				});
+
 				$window.on('screen:wide screen:web', function(event) {
 
 				});
