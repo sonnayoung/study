@@ -30,54 +30,8 @@ try {
                 });
 
 
-				// var $visual = $('.visual'),
-				// 	$visualSlide = $visual.find('.slide_list');
 
-
-
-				// $visualSlide.slick({
-				// 	autoplay : true,
-				// 	dots : false,
-				// 	swipe : false,
-				// 	draggable : false,
-				// 	slidesToShow : 1,
-				// 	slidesToScroll: 1,
-				// 	variableWidth: false,
-				// 	infinite: true,
-				// 	prevArrow : $('.visual .prev'),
-				// 	nextArrow : $('.visual .next'),
-
-				// 	//추가 기능
-				// 	autoArrow : $('.visual .auto'),
-				// 	isRunOnLowIE : false,
-				// 	pauseOnArrowClick : true,
-				// 	pauseOnDirectionKeyPush : true,
-				// 	pauseOnSwipe : true,
-				// 	pauseOnDotsClick : true,
-				// 	pauseText : '정지',
-				// 	playText : '재생',
-				// 	current : $('.visual .current'),
-				// 	total : $('.visual .total'),
-				// 	responsive: [
-				// 		{
-				// 			breakpoint: 1001,
-				// 			settings: {
-				// 				swipe : true,
-				// 				draggable : true
-				// 			}
-				// 		},
-				// 		{
-				// 			breakpoint: 641,
-				// 			settings: {
-				// 				slidesToShow : 1,
-				// 				swipe : true,
-				// 				draggable : true,
-				// 				variableWidth: true,
-				// 			}
-				// 		}]
-				// });
-
-				//행사축제 슬라이드
+				//비주얼 슬라이드
 				var $visual = $('.visual'),
 					$visualSlide = $('.visual .slide_list'),
 					$SlideItem = $visualSlide.find('.slide_item'),
@@ -118,6 +72,7 @@ try {
 					pauseOnDotsHover : true,
 					swipe:false,
 					draggable:false,
+					infinite: true,
 					dots : true,
 					appendDots: $SlideThumbnailBox,
 					dotsClass:'slick-dots clearfix',
@@ -128,31 +83,30 @@ try {
 					current : $SlideControl.find('.current'),
 
 					//추가 기능
-					infinite: true,
-					variableWidth: true,
+					variableWidth: false,
+					autoArrow : $('.visual .auto'),
 					isRunOnLowIE : false,
+					pauseOnArrowClick : true,
+					pauseOnDirectionKeyPush : true,
+					pauseOnSwipe : true,
+					pauseOnDotsClick : true,
+					pauseText : '정지',
+					playText : '재생',
 					responsive: [
 						{
-							breakpoint: 1201,
+							breakpoint: 1001,
 							settings: {
-								slidesToShow: 2,
+								swipe : true,
+								draggable : true
 							}
 						},
 						{
-							breakpoint: 801,
+							breakpoint: 641,
 							settings: {
-								swipe:true,
-								draggable:true,
-								swipeToSlide: true,
-							}
-						},
-						{
-							breakpoint: 431,
-							settings: {
-								swipe:true,
-								draggable:true,
-								swipeToSlide: true,
-								slidesToShow: 1,
+								slidesToShow : 1,
+								swipe : true,
+								draggable : true,
+								variableWidth: true,
 							}
 						}]
 				});
