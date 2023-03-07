@@ -11,16 +11,26 @@
     }
   }
 
- // bg
+ // 단일 배경 이미지
 @mixin bg_img($size: null, $url: null, $x:0, $y:0) {
     background-image: url($url);
     background-position: center center;
     background-size: $size;
     background-repeat: no-repeat;
 }
-// sprite
-@mixin sprite_img( $url: null, $position:0 0) {
+// sprite 이미지
+@mixin sprite_img($width:0, $height:0, $url: null, $position:0 0) {
+  width: $width;
+  height: $height;
   background-image: url($url);
   background-position: $position;
   background-repeat: no-repeat;
 }
+ //style로 이미지 배경쓸때
+ @mixin style_bg{
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  font-size: 0;
+  line-height: 0;
+ }

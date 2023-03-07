@@ -5,7 +5,7 @@ $desktop: 1280px;
 
 /*반응형, 브라우저 크기가 1001px 이상일때*/
 @mixin onlyPC{
-    @media (min-width: $tablet + 1){
+    @media (min-width: $tablet ){
         @content;
     }
 }

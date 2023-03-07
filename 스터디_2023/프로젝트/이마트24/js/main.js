@@ -30,49 +30,129 @@ try {
                 });
 
 
+				// var $visual = $('.visual'),
+				// 	$visualSlide = $visual.find('.slide_list');
+
+
+
+				// $visualSlide.slick({
+				// 	autoplay : true,
+				// 	dots : false,
+				// 	swipe : false,
+				// 	draggable : false,
+				// 	slidesToShow : 1,
+				// 	slidesToScroll: 1,
+				// 	variableWidth: false,
+				// 	infinite: true,
+				// 	prevArrow : $('.visual .prev'),
+				// 	nextArrow : $('.visual .next'),
+
+				// 	//추가 기능
+				// 	autoArrow : $('.visual .auto'),
+				// 	isRunOnLowIE : false,
+				// 	pauseOnArrowClick : true,
+				// 	pauseOnDirectionKeyPush : true,
+				// 	pauseOnSwipe : true,
+				// 	pauseOnDotsClick : true,
+				// 	pauseText : '정지',
+				// 	playText : '재생',
+				// 	current : $('.visual .current'),
+				// 	total : $('.visual .total'),
+				// 	responsive: [
+				// 		{
+				// 			breakpoint: 1001,
+				// 			settings: {
+				// 				swipe : true,
+				// 				draggable : true
+				// 			}
+				// 		},
+				// 		{
+				// 			breakpoint: 641,
+				// 			settings: {
+				// 				slidesToShow : 1,
+				// 				swipe : true,
+				// 				draggable : true,
+				// 				variableWidth: true,
+				// 			}
+				// 		}]
+				// });
+
+				//행사축제 슬라이드
 				var $visual = $('.visual'),
-					$visualSlide = $visual.find('.slide_list');
+					$visualSlide = $('.visual .slide_list'),
+					$SlideItem = $visualSlide.find('.slide_item'),
+					ItemLength = $SlideItem.length,
+					$SlideControl = $visual.find('.slide_control'),
+					$ControlBox = $visual.find('.progress'),
+					$SlideThumbnailBox = $ControlBox.find('.thumbnail_box');
 
 
-
+				var boardSlideCount = null;
+				$visualSlide.on('init', function(event, slick){
+					boardSlideCount = slick.slideCount;
+					setboardSlideCount();
+					setboardSlideCurrentSlideNumber(slick.currentSlide);
+				});
+				$visualSlide.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+					setboardSlideCurrentSlideNumber(nextSlide);
+				});
+				function setboardSlideCount() {
+					var $StateBar = $ControlBox.find('.state_bar'),
+						ThumbnailWidth = (100 / ItemLength);
+					$StateBar.attr('data-total', ItemLength);
+					$ControlBox.find('.thumbnail_box').find('li').css('width', ThumbnailWidth+'%');
+				}
+				function setboardSlideCurrentSlideNumber(currentSlide) {
+					var $StateBar = $ControlBox.find('.state_bar'),
+						StateBarWidth = 0,
+						current = currentSlide + 1;
+					StateBarWidth = (100 / boardSlideCount) * current;
+					$StateBar.attr('data-current', currentSlide + 1).css('width', StateBarWidth+'%');
+				}
 				$visualSlide.slick({
 					autoplay : true,
-					dots : false,
-					swipe : false,
-					draggable : false,
-					slidesToShow : 1,
+					slidesToShow: 1,
 					slidesToScroll: 1,
-					variableWidth: false,
-					infinite: true,
-					prevArrow : $('.visual .prev'),
-					nextArrow : $('.visual .next'),
+					prevArrow : $SlideControl.find('.prev'),
+					nextArrow : $SlideControl.find('.next'),
+					pauseOnDotsHover : true,
+					swipe:false,
+					draggable:false,
+					dots : true,
+					appendDots: $SlideThumbnailBox,
+					dotsClass:'slick-dots clearfix',
+					customPaging : function(slider, i) {
+						return '<button type="button"><span>'+(i + 1)+'번 슬라이드 보기</span></button>';
+					},
+					total : $SlideControl.find('.total'),
+					current : $SlideControl.find('.current'),
 
 					//추가 기능
-					autoArrow : $('.visual .auto'),
+					infinite: true,
+					variableWidth: true,
 					isRunOnLowIE : false,
-					pauseOnArrowClick : true,
-					pauseOnDirectionKeyPush : true,
-					pauseOnSwipe : true,
-					pauseOnDotsClick : true,
-					pauseText : '정지',
-					playText : '재생',
-					current : $('.visual .current'),
-					total : $('.visual .total'),
 					responsive: [
 						{
-							breakpoint: 1001,
+							breakpoint: 1201,
 							settings: {
-								swipe : true,
-								draggable : true
+								slidesToShow: 2,
 							}
 						},
 						{
-							breakpoint: 641,
+							breakpoint: 801,
 							settings: {
-								slidesToShow : 1,
-								swipe : true,
-								draggable : true,
-								variableWidth: true,
+								swipe:true,
+								draggable:true,
+								swipeToSlide: true,
+							}
+						},
+						{
+							breakpoint: 431,
+							settings: {
+								swipe:true,
+								draggable:true,
+								swipeToSlide: true,
+								slidesToShow: 1,
 							}
 						}]
 				});

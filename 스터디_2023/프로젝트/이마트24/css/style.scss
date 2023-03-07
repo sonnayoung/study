@@ -16,18 +16,15 @@ body{font-family:'Noto Sans KR', sans-serif;font-size: 16px;}
 @include onlyPC{
 }
 @include desktop{
-    body{background-color: #1900f9;}
     #wrapper{min-width:1000px}
     .wrap{width:1000px}
     
 }
 @include tablet{
-    body{background-color: #00f999;}
     #wrapper{min-width:94%}
     .wrap{width:94%}
 }
 @include mobile{
-    body{background-color: #f9bb00;}
 }
 
 h1{font-size: 0;line-height: 0;}
@@ -118,6 +115,7 @@ h1{font-size: 0;line-height: 0;}
     .slide_list{
         overflow: hidden;
         border-radius: 0 0 45px 45px;
+        box-shadow: 80px 80px 128px rgba(0,0,0,0.1);
         .slide_item{
             width: 100%;
             height: 495px;
@@ -128,11 +126,7 @@ h1{font-size: 0;line-height: 0;}
                     display: block;
                     width:100%;
                     height: 100%;
-                    background-repeat: no-repeat;
-                    background-position: center center;
-                    background-size: cover;
-                    font-size: 0;
-                    line-height: 0;
+                    @include style_bg;
                 }
                 span.slide_m{display: none;}
             }
@@ -141,13 +135,99 @@ h1{font-size: 0;line-height: 0;}
     .slide_control{
         position: absolute;
         left:105px;
-        bottom: -45px;
+        bottom: -35px;
         width: 414px;
+        padding: 23px 33px 24px;
         background-color: #fff;
         border-radius:15px;
+        .control_box{
+            display: inline-block;
+            button{
+                width:24px;
+                height: 24px;
+                font-size:0;
+                line-height:0;
+                
+                &::before{
+                    display: block;
+                    @include sprite_img(12px, 12px, '../images/main_sprite.png' , -3px -2px)
+                    
+                }
+                
+            }
+            .auto{
+                &::before{
+                    @include sprite_img(7px, 11px, '../images/main_sprite.png' , -43px -2px)
+                }
+            }
+            .slick-play{
+                &::before{
+                    @include sprite_img(8px, 12px, '../images/main_sprite.png' , -43px -20px)
+                }
+            }
+            .prev{
+                &::before{
+                    transform:rotate(180deg);
+                }
+            }
+        }
+        .count_box{
+            display: inline-block;
+            .progress{
+                display: inline-block;
+                position:relative;
+                width:156px;
+                box-sizing:border-box;
+                vertical-align: middle;
+                .total_bar{
+                    display:block;
+                    position:relative;
+                    height:2px;
+                    background-color:#ebebeb ;
+                    .state_bar{display:block;position:absolute;top:0;left:0;height:2px;background-color:$BrandColorYellow;transition:width 500ms;}
+                    .thumbnail_box{
+                        position:absolute;
+                        top:0;
+                        left:0;
+                        width:100%;
+                        .slick-dots{
+                            > li{
+                                float:left;
+                                button{
+                                    display:block;width:100%;height:20px;color:transparent;
+                                    span{
+                                        font-size:0;line-height:0;
+                                    }
+                                }
+                            }
+                    
+                      }   
+                    }
+                }
+            }
+            .current, .total{
+                font-size:15px;
+                line-height:24px;
+                color: #999;
+            }
+            .current{
+                color:$BrandColorYellow;
+            }
+        }
     }
-    
- 
+}
+
+
+.event{
+    margin-top: 127px;
+    h2{
+        font-size:45px;
+        line-height:50px;
+        color: $BasicColor;
+    }
+}
+@include mobile{
+
 }
 
 footer{
@@ -198,9 +278,7 @@ footer{
             &:after{
                 display: block;
                 content: '';
-                width: 20px;
-                height: 20px;
-                @include sprite_img('../images/main_sprite.png' , -214px -56px)
+                @include sprite_img(20px, 20px, '../images/main_sprite.png' , -214px -56px)
             }
         }
         .layer{
