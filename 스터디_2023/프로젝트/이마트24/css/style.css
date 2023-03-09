@@ -222,4 +222,46 @@ body { font-family: 'Noto Sans KR', sans-serif; font-size: 16px; }
 .event .more:hover { color: #f9bb00; }
 
 .event .more:after { display: block; position: absolute; top: 0; right: 0; width: 24px; height: 24px; background-image: url("../images/main_sprite.png"); background-position: -69px -2px; background-repeat: no-repeat; }
+
+.only_emart { margin-top: 195px; }
+
+.only_emart .title_box h2 { font-size: 45px; line-height: 50px; color: #333; }
+
+.only_emart .title_box span { margin-top: 14px; font-size: 16px; line-height: 24px; color: #f9bb00; }
+
+.only_emart .only_slide { margin-top: 78px; font-size: 0; line-height: 0; }
+
+.only_emart .only_slide .slide_item { position: relative; display: inline-block; width: calc((100% - 49px)/4); margin-right: 16px; vertical-align: top; text-align: center; -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
+
+.only_emart .only_slide .slide_item a { position: relative; overflow: hidden; display: block; border-radius: 24px; -webkit-box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05); box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05); }
+
+.only_emart .only_slide .slide_item a .img_box { overflow: hidden; height: 294px; border-radius: 24px; }
+
+.only_emart .only_slide .slide_item a .img_box span { width: 100%; height: 100%; background-repeat: no-repeat; background-position: center center; background-size: cover; font-size: 0; line-height: 0; -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; -webkit-transform: scale(1); transform: scale(1); }
+
+.only_emart .only_slide .slide_item a .text_box { padding: 0 24px 24px; }
+
+.only_emart .only_slide .slide_item a .text_box .title { margin-top: 13px; font-size: 20px; line-height: 24px; font-weight: 500; color: #333; }
+
+.only_emart .only_slide .slide_item a .text_box p { overflow: hidden; height: 48px; margin-top: 15px; font-size: 17px; line-height: 24px; color: #999; }
+
+.only_emart .only_slide .slide_item a:hover { text-decoration: none; }
+
+.only_emart .only_slide .slide_item a::after { display: block; position: absolute; top: 0; left: 0; width: calc(100% - 2px); height: calc(100% - 2px); border: 1px solid #ebebeb; border-radius: 24px; }
+
+.only_emart .only_slide .slide_item a:hover:after { width: calc(100% - 8px); height: calc(100% - 8px); border: 4px solid #f9bb00; }
+
+.only_emart .only_slide .slide_item:last-child { margin-right: 0; }
+
+.only_emart .only_slide .slide_item:hover { -webkit-transform: translateY(-10px); transform: translateY(-10px); }
+
+.only_emart .only_slide .slide_item:hover a .img_box { border-radius: 20px; }
+
+.only_emart .only_slide .slide_item:hover a .img_box span { -webkit-transform: scale(1.15); transform: scale(1.15); }
+
+.buisness { margin-top: 290px; }
+
+.buisness .title_box h2 { font-size: 45px; line-height: 50px; color: #333; }
+
+.buisness .title_box span { margin-top: 14px; font-size: 16px; line-height: 24px; color: #333; }
 /*# sourceMappingURL=style.css.map */
