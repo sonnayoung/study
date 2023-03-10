@@ -34,3 +34,25 @@
   font-size: 0;
   line-height: 0;
  }
+
+ //more
+ @mixin more{
+  
+  position: absolute;
+  padding-right:33px;
+  font-size:15px;
+  line-height:24px;
+  color:$BasicColor;
+  font-weight:500;
+  &:hover{
+      color: $BrandColorYellow;
+  }
+  &:after{
+      display:block;
+      position: absolute;
+      top:0;
+      right:0;
+      @include sprite_img(24px, 24px, '../images/main_sprite.png' , -69px -2px)
+
+  }
+ }
