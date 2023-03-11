@@ -538,8 +538,37 @@ body{font-family:'Noto Sans KR', sans-serif;font-size: 16px;}
     }
 }
 
+@keyframes pin {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-5%);
+    }
+    
+}
 .store{
+    position: relative;
     margin-top:176px;
+    &::before{
+        display: block;
+        position: absolute;
+        top:0;
+        right: calc(50% - 640px);;
+        width:415px;
+        height:332px;
+        @include bg_img(contain,'../images/mapPaper.png')
+    }
+    &::after{
+        display: block;
+        position: absolute;
+        top:0;
+        right: calc(50% - 640px);
+        width: 415px;
+        height: 334px;
+        @include bg_img(contain,'../images/mapPin.png');
+        animation: pin 0.6s ease infinite alternate;
+    }
     h2{
         font-size:48px;
         line-height:50px;
@@ -624,22 +653,43 @@ body{font-family:'Noto Sans KR', sans-serif;font-size: 16px;}
 
 .app{
     position: relative;
+    min-height:935px;
     margin-top:165px;
+    
     &::before{
         display: block;
         position:absolute;
         top:0;
+        left: 0;
         right:216px;
         width:1800px;
         height: 100%;
         border-radius: 0 192px 64px 0;
         background:#f3f3f3;
     }
+    .img_box{
+        position: absolute;
+        left:0;
+        top:0;
+        width:675px;
+    }
+    .title_box{
+        padding-left: 50%;
+        text-align: center;
+        span{
+            font-size:20px;
+            line-height: 24px;
+            color: $BrandColorYellow;
+        }
+        h2{
+            font-size: 48px;
+            line-height: 60px;
+            color: $Black;
+        }
+    }
 }
 
-.story{
 
-}
 
 .media{
     margin:120px 0 160px;

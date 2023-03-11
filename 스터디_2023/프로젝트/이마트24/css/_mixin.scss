@@ -12,7 +12,7 @@
   }
 
  // 단일 배경 이미지
-@mixin bg_img($size: null, $url: null, $x:0, $y:0) {
+@mixin bg_img($size: null, $url: null) {
     background-image: url($url);
     background-position: center center;
     background-size: $size;
