@@ -225,7 +225,8 @@ body {
   margin-left: auto;
 }
 
-.slick-track:before, .slick-track:after {
+.slick-track:before,
+.slick-track:after {
   display: table;
 }
 
@@ -376,7 +377,8 @@ body {
   font-size: 0;
   line-height: 0;
 }
-.visual .slide_control .count_box .current, .visual .slide_control .count_box .total {
+.visual .slide_control .count_box .current,
+.visual .slide_control .count_box .total {
   font-size: 15px;
   line-height: 24px;
   color: #999;
@@ -898,24 +900,52 @@ body {
 .app .img_box {
   position: absolute;
   left: 0;
-  top: 0;
+  top: 120px;
   width: 675px;
 }
-.app .title_box {
+.app .text_box {
+  padding-top: 260px;
   padding-left: 50%;
   text-align: center;
 }
-.app .title_box span {
+.app .text_box .title_box span {
   font-size: 20px;
   line-height: 24px;
   color: #f9bb00;
 }
-.app .title_box h2 {
+.app .text_box .title_box h2 {
+  margin-top: 11px;
   font-size: 48px;
-  line-height: 60px;
+  line-height: 74px;
   color: #000;
 }
-
+.app .text_box .more {
+  position: absolute;
+  padding-right: 33px;
+  font-size: 15px;
+  line-height: 24px;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+  margin-top: 22px;
+}
+.app .text_box .more:hover {
+  color: #f9bb00;
+}
+.app .text_box .more:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/main_sprite.png");
+  background-position: -69px -2px;
+  background-repeat: no-repeat;
+}
+.app .text_box .down_box {
+  margin-top: 96px;
+}
 .media {
   margin: 120px 0 160px;
 }
