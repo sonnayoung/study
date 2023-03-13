@@ -37,7 +37,6 @@
 
  //more
  @mixin more{
-  
   position: absolute;
   padding-right:33px;
   font-size:15px;
@@ -55,4 +54,18 @@
       @include sprite_img(24px, 24px, '../images/main_sprite.png' , -69px -2px)
 
   }
+ }
+
+ //노란버튼
+ @mixin yellowBtn{
+  width:196px;
+  height: 58px;
+  padding:16px 24px;
+  background-color: $BrandColorYellow;
+  color: $Black;
+  border-radius:12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  font-size:16px;
+  line-height:24px;
+  text-align:center;
  }

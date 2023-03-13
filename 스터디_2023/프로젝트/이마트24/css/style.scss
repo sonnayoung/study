@@ -856,7 +856,7 @@ body {
 
 .app {
     position: relative;
-    min-height: 935px;
+    min-height: 950px;
     margin-top: 165px;
 
     &::before {
@@ -864,10 +864,9 @@ body {
         position: absolute;
         top: 0;
         left: 0;
-        right: 216px;
-        width: 1800px;
+        width: 1700px;
         height: 100%;
-        border-radius: 0 192px 64px 0;
+        border-radius: 0 256px 64px 0;
         background: #f3f3f3;
     }
 
@@ -875,7 +874,7 @@ body {
         position: absolute;
         left: 0;
         top: 120px;
-        width: 675px;
+        width: 620px;
     }
 
     .text_box {
@@ -905,14 +904,43 @@ body {
         .down_box{
             margin-top: 96px;
             a{
-                
+                @include yellowBtn;
+                &::before{
+                    display: inline-block;
+                    margin-right:8px;
+                    @include sprite_img(16px, 16px, '../images/main_sprite.png', -248px -49px)
+                }
             }
+            p{margin-top:16px;}
         }
         
     }
 }
 
-
+.story{
+    margin-top:125px;
+    .title_box{
+        h2{
+            font-size:48px;
+            line-height:52px;
+            font-weight:700;
+            em{
+                display: block;
+                font-weight:300;
+            }
+        }
+        span{
+            margin-top:12px;
+            color:$BrandColorYellow;
+        }
+    }
+    .sns_list{
+        li{
+            display: inline-block;
+        }
+    }
+    
+}
 
 .media {
     margin: 120px 0 160px;
