@@ -271,6 +271,84 @@ body { font-family: 'Noto Sans KR', sans-serif; font-size: 16px; }
 
 .only_emart .only_slide .slide_item:hover a .img_box span { -webkit-transform: scale(1.15); transform: scale(1.15); }
 
+@-webkit-keyframes gray { 0% { -webkit-transform: translateY(-6%); transform: translateY(-6%); }
+  20% { -webkit-transform: translateY(0); transform: translateY(0);
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0); }
+  50% { -webkit-transform: translateY(-5%); transform: translateY(-5%);
+    -webkit-filter: grayscale(1);
+            filter: grayscale(1); }
+  100% { -webkit-transform: translateY(0); transform: translateY(0);
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0); } }
+
+@keyframes gray { 0% { -webkit-transform: translateY(-6%); transform: translateY(-6%); }
+  20% { -webkit-transform: translateY(0); transform: translateY(0);
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0); }
+  50% { -webkit-transform: translateY(-5%); transform: translateY(-5%);
+    -webkit-filter: grayscale(1);
+            filter: grayscale(1); }
+  100% { -webkit-transform: translateY(0); transform: translateY(0);
+    -webkit-filter: grayscale(0);
+            filter: grayscale(0); } }
+
+@-webkit-keyframes coin1 { 0% { opacity: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    -webkit-filter: brightness(1);
+            filter: brightness(1); }
+  50% { opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
+  80% { opacity: 0;
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%); }
+  100% { opacity: 0; } }
+
+@keyframes coin1 { 0% { opacity: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    -webkit-filter: brightness(1);
+            filter: brightness(1); }
+  50% { opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
+  80% { opacity: 0;
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%); }
+  100% { opacity: 0; } }
+
+@-webkit-keyframes coin2 { 0% { opacity: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  30% { opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
+  60% { opacity: 0; }
+  70% { -webkit-transform: translateY(50%); transform: translateY(50%); }
+  100% { opacity: 0; } }
+
+@keyframes coin2 { 0% { opacity: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  30% { opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
+  60% { opacity: 0; }
+  70% { -webkit-transform: translateY(50%); transform: translateY(50%); }
+  100% { opacity: 0; } }
+
+@-webkit-keyframes jump { 0% { -webkit-transform: translateY(-5%); transform: translateY(-5%);
+    -webkit-filter: brightness(1.02);
+            filter: brightness(1.02); }
+  100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+
+@keyframes jump { 0% { -webkit-transform: translateY(-5%); transform: translateY(-5%);
+    -webkit-filter: brightness(1.02);
+            filter: brightness(1.02); }
+  100% { -webkit-transform: translateY(0); transform: translateY(0); } }
+
 .buisness { position: relative; margin-top: 290px; padding: 157px 0 203px; }
 
 .buisness::before { display: block; position: absolute; top: 0; left: 216px; width: 1800px; height: 100%; border-radius: 64px 0px 0px 192px; background: -webkit-gradient(linear, left top, left bottom, from(#fece6a), to(#fee6b4)); background: linear-gradient(#fece6a, #fee6b4); }
@@ -281,7 +359,7 @@ body { font-family: 'Noto Sans KR', sans-serif; font-size: 16px; }
 
 .buisness .buisness_list { margin-top: 40px; font-size: 0; line-height: 0; }
 
-.buisness .buisness_list li { display: inline-block; position: relative; width: calc((100% - 32px)/3); height: 418px; margin-right: 16px; background-color: #fff; border-radius: 36px; -webkit-transform: translateY(0); transform: translateY(0); -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
+.buisness .buisness_list li { overflow: hidden; display: inline-block; position: relative; width: calc((100% - 32px)/3); height: 418px; margin-right: 16px; background-color: #fff; border-radius: 36px; -webkit-transform: translateY(0); transform: translateY(0); -webkit-transition: all 0.2s linear; transition: all 0.2s linear; }
 
 .buisness .buisness_list li::before { display: block; position: absolute; right: 26px; top: 26px; width: 36px; height: 36px; background-image: url("../images/main_sprite.png"); background-position: -234px -2px; background-repeat: no-repeat; }
 
@@ -297,7 +375,23 @@ body { font-family: 'Noto Sans KR', sans-serif; font-size: 16px; }
 
 .buisness .buisness_list li:hover { -webkit-transform: translateY(-15px); transform: translateY(-15px); }
 
+.buisness .buisness_list li:hover .icon::before { -webkit-animation: gray 2s linear infinite alternate; animation: gray 2s linear infinite alternate; }
+
+.buisness .buisness_list li:nth-child(2) .icon::before { position: absolute; top: 0; left: 0; background-image: url("../images/found3.png"); background-position: center center; background-size: contain; background-repeat: no-repeat; }
+
+.buisness .buisness_list li:nth-child(2) .icon::after { display: block; position: absolute; top: 0; left: 0; width: 100%; height: 239px; background-image: url("../images/found4.png"); background-position: center center; background-size: contain; background-repeat: no-repeat; }
+
+.buisness .buisness_list li:nth-child(2):hover .icon::before { -webkit-animation: coin2 2s cubic-bezier(1, 0.5, 0.5, 1) infinite; animation: coin2 2s cubic-bezier(1, 0.5, 0.5, 1) infinite; }
+
+.buisness .buisness_list li:nth-child(2):hover .icon::after { -webkit-animation: coin1 2s cubic-bezier(1, 0.8, 0.5, 1) infinite; animation: coin1 2s cubic-bezier(1, 0.8, 0.5, 1) infinite; }
+
+.buisness .buisness_list li:nth-child(2):hover img { -webkit-transform: translateY(-6%); transform: translateY(-6%); }
+
 .buisness .buisness_list li:last-child { margin-right: 0; }
+
+.buisness .buisness_list li:last-child .icon::before { background-image: url("../images/found5.png"); background-position: center center; background-size: contain; background-repeat: no-repeat; }
+
+.buisness .buisness_list li:last-child:hover .icon::before { -webkit-animation: jump 0.5s linear infinite alternate; animation: jump 0.5s linear infinite alternate; }
 
 @-webkit-keyframes pin { 0% { -webkit-transform: translateY(0); transform: translateY(0); }
   100% { -webkit-transform: translateY(-5%); transform: translateY(-5%); } }
