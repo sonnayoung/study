@@ -174,6 +174,41 @@ try {
 					$Myslide.slick('setPosition');
 				});
 
+
+				//스토리 슬라이드
+				var $story = $('.story'),
+					$storySlide = $story.find('.slide_list'),
+					$storyControl = $story.find('.control_box');
+
+					$storySlide.slick({
+						autoplay: false,
+						arrows:true,
+						dots: false,
+						slidesToShow: 3,
+						slidesToScroll: 1,
+						infinite: false,
+						swipe: false,
+						draggable: false,
+						prevArrow: $storyControl.find('.prev'),
+						nextArrow: $storyControl.find('.next'),
+						//추가 기능
+						isRunOnLowIE: false,
+						pauseOnArrowClick: true,
+						pauseOnDirectionKeyPush: true,
+						pauseOnSwipe: true,
+						pauseOnDotsClick: true,
+						responsive: [
+							{
+								breakpoint: 1451,
+								settings: {
+									swipe: true,
+									draggable: true,
+									swipeToSlide: true
+								}
+							}
+						]
+					});
+
 				$window.on('screen:wide screen:web', function (event) {
 
 				});

@@ -30,13 +30,13 @@ a:active {
 
 #wrapper {
     position: relative;
-    min-width: 1280px;
+    min-width: 1232px;
     overflow: hidden;
 }
 
 .wrap {
     position: relative;
-    width: 1280px;
+    width: 1232px;
     margin: 0 auto;
 }
 
@@ -1003,6 +1003,7 @@ body {
 .story{
     margin-top:125px;
     .title_box{
+        float: left;
         h2{
             font-size:48px;
             line-height:52px;
@@ -1016,62 +1017,100 @@ body {
             margin-top:12px;
             color:$BrandColorYellow;
         }
+        .sns_list{
+            margin-top: 18px;
+            font-size:0;
+            line-height:0;
+            li{
+                display: inline-block;
+                vertical-align: top;
+                a{
+                    display: block;
+                    width:36px;
+                    height:36px;
+                    &::before{
+                        display: block;
+                        margin:10px auto 0;
+                        @include sprite_img(23px, 16px, '../images/main_sprite.png', -98px -28px)
+                    }
+                }
+                &.youtube{
+                    a{
+                        &::before{
+                            @include sprite_img(23px, 16px, '../images/main_sprite.png', -98px -28px)
+                    
+                        }
+                    }
+                }
+                &.insta{
+                    a{
+                        &::before{
+                            margin-top: 7px;
+                            @include sprite_img(22px, 22px, '../images/main_sprite.png', -127px -28px)
+                    
+                        }
+                    }
+                }
+                &.facebook{
+                    a{
+                        &::before{
+                            @include sprite_img(18px, 18px, '../images/main_sprite.png', -156px -28px)
+                    
+                        }
+                    }
+                }
+                &.tictok{
+                    a{
+                        &::before{
+                            margin-top:7px;
+                            @include sprite_img(18px, 20px, '../images/main_sprite.png', -183px -28px)
+                    
+                        }
+                    }
+                }
+            }
+            
+    
+        }
     }
-    .sns_list{
-        font-size:0;
-        line-height:0;
-        li{
-            display: inline-block;
-            vertical-align: top;
+    .sns_slide{
+        float: right;
+        width: 908px;
+        .slide_item{
             a{
                 display: block;
-                width:36px;
-                height:36px;
-                &::before{
-                    display: block;
-                    margin:10px auto 0;
-                    @include sprite_img(23px, 16px, '../images/main_sprite.png', -98px -28px)
+                .img_box{
+                    overflow: hidden;
+                    width:288px;
+                    height:388px;
+                    border-radius:48px;
+                    span{
+                        display: block;
+                        height: 100%;
+                        @include style_bg;
+                    }
+                    
                 }
             }
-            &.youtube{
-                a{
-                    &::before{
-                        @include sprite_img(23px, 16px, '../images/main_sprite.png', -98px -28px)
+            &:nth-child(2n){
+                margin-top: 64px;
                 
-                    }
-                }
             }
-            &.insta{
-                a{
-                    &::before{
-                        margin-top: 7px;
-                        @include sprite_img(22px, 22px, '../images/main_sprite.png', -127px -28px)
-                
-                    }
+            
+            &:nth-child(2n - 1){
+                .img_box{
+                    border-radius : 48px 48px 48px 0
                 }
+                
             }
-            &.facebook{
-                a{
-                    &::before{
-                        @include sprite_img(18px, 18px, '../images/main_sprite.png', -156px -28px)
-                
-                    }
+            &:nth-child(3n){
+                .img_box{
+                    border-radius:48px 0 48px 48px;
                 }
-            }
-            &.tictok{
-                a{
-                    &::before{
-                        margin-top:7px;
-                        @include sprite_img(18px, 20px, '../images/main_sprite.png', -183px -28px)
                 
-                    }
-                }
             }
         }
-        
-
     }
-    
 }
 
 .media {
