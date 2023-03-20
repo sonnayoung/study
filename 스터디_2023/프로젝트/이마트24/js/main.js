@@ -12,25 +12,24 @@ try {
 			var $window = $(window);
 			$(function () {
 
-				//패밀리사이트
-				$('.family_site .family_btn').on('click', function () {
-					var $this = $(this),
-						$Parent = $this.parent('.family_site'),
-						IsActive = $Parent.is('.active'),
-						$Layer = $this.siblings('.layer');
-					if (!IsActive) {
-						$Parent.addClass('active');
-						$this.attr('title', '패밀리사이트 닫기');
-						$Layer.slideDown();
-					} else {
-						$Parent.removeClass('active');
-						$this.attr('title', '패밀리사이트 열기');
-						$Layer.slideUp();
-					};
+				//섹션 애니메이션
+				$(window).on('scroll', function(){
+					var scrollTop = $(window).scrollTop(),
+						winBottom = scrollTop + $(window).height(),
+						$section = $('.scroll_ani');
+					$section.each(function(){
+						var $this = $(this),
+							thisTop = $this.offset().top;
+						if(winBottom > (thisTop + 50)){
+							$this.attr('data-on', 'on');
+						}
+						if(winBottom < (thisTop - 50)){
+							$this.attr('data-on', 'off');
+						}
+					});
 				});
 
-
-
+			
 				//비주얼 슬라이드
 				var $visual = $('.visual'),
 					$visualSlide = $('.visual .slide_list'),
@@ -191,6 +190,7 @@ try {
 						draggable: false,
 						prevArrow: $storyControl.find('.prev'),
 						nextArrow: $storyControl.find('.next'),
+						variableWidth:true,
 						//추가 기능
 						isRunOnLowIE: false,
 						pauseOnArrowClick: true,
@@ -208,6 +208,31 @@ try {
 							}
 						]
 					});
+
+				$storySlide.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+					if($(this).hasClass('odd')){
+						$(this).removeClass('odd').addClass('even');
+					}else{
+						$(this).removeClass('even').addClass('odd');
+					}
+				});
+
+				//풋터 패밀리사이트
+				$('.family_site .family_btn').on('click', function () {
+					var $this = $(this),
+						$Parent = $this.parent('.family_site'),
+						IsActive = $Parent.is('.active'),
+						$Layer = $this.siblings('.layer');
+					if (!IsActive) {
+						$Parent.addClass('active');
+						$this.attr('title', '패밀리사이트 닫기');
+						$Layer.slideDown();
+					} else {
+						$Parent.removeClass('active');
+						$this.attr('title', '패밀리사이트 열기');
+						$Layer.slideUp();
+					};
+				});
 
 				$window.on('screen:wide screen:web', function (event) {
 

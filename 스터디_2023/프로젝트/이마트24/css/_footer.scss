@@ -2,7 +2,7 @@
 
 footer{
     position: relative;
-    padding:90px 0;;
+    padding:80px 0;;
     background-color: #f4f4f4;
     font-size: 12px;
     line-height: 20px;
@@ -13,15 +13,17 @@ footer{
             display: inline-block;
             position: relative;
             a{
-                padding: 0 10px;
+                padding: 0 14px;
                 font-size: 12px;
                 line-height:20px;
                 color: #333;
                 font-weight: 300;
             }
-            &:hover a{
-                color: $BrandColorYellow;
-            }
+            &:hover{
+                a{
+                    color: $BrandColorYellow;
+                }
+            } 
             &:after{
                 content: '';
                 display: block;
@@ -32,7 +34,16 @@ footer{
                 height:8px;
                 background-color:#999;
             }
-            &:first-child a{padding-left:0;}
+            &:first-child {
+                a{
+                    padding-left:0;
+                }
+            }
+            &:last-child{
+                &:after{
+                    display: none;
+                }
+            }
         }
         li.privacy{
             a{
@@ -47,19 +58,21 @@ footer{
         top:0;
         .family_btn{
             &:after{
-                display: block;
-                content: '';
-                @include sprite_img(20px, 20px, '../images/main_sprite.png' , -214px -56px)
+                display: inline-block;
+                margin-left: 5px;
+                content: '+';
             }
         }
         .layer{
             display: none;
             overflow-y: scroll;
             position: absolute;
-            bottom: 100%;
+            bottom: 24px;
             left: 0;
             width: 170px;
-            height: 160px;
+            height: 280px;
+            border: 0.5px solid #ebebeb;
+            box-shadow:0px 8px 24px rgba(0, 0, 0, 0.05);
             background-color: #fff;
             li a{
                 padding:8px 12px;
@@ -69,9 +82,22 @@ footer{
         }
     }
     .footer_con{
+        margin-top:35px;
         .title{
             display: block;
         }
-        .text{display: block;margin-top:50px;}
+        .text{
+            display: block;
+            margin-top:30px;
+            color:$gray;
+            line-height:24px;
+        }
+    }
+    .sns_box{
+        position: absolute;
+        right:0;
+        li{
+            display:flex;
+        }
     }
 }

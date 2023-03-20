@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-/* (주)한신정보기술 서정한 - 2019.08 */
 
 body{position:relative; line-height:25px; color:#555555; font-size:16px; font-family:'NotoKr','Malgun Gothic','맑은 고딕',Dotum,'돋움',Helvetica,AppleSDGothicNeo,sans-serif; letter-spacing:-0.03em;}
 a:link{color:#555555;text-decoration:none;}
@@ -8,7 +7,7 @@ a:visited{color:#555555;text-decoration:none;}
 a:hover{color:#555555;text-decoration:underline;}
 a:active{color:#555555;text-decoration:underline;}
 a span{cursor:pointer;}
-button{cursor:pointer; font-family:'NotoKr','Malgun Gothic','맑은 고딕',Dotum,'돋움',Helvetica,AppleSDGothicNeo,sans-serif;}
+button{cursor:pointer; font-family:'Noto Sans KR','Malgun Gothic','맑은 고딕',Dotum,'돋움',Helvetica,AppleSDGothicNeo,sans-serif;}
 input{font-family:'NotoKr','Malgun Gothic','맑은 고딕',Dotum,'돋움',Helvetica,AppleSDGothicNeo,sans-serif;}
 input[type="submit"]{cursor:pointer;}
 

@@ -69,3 +69,19 @@
   line-height:24px;
   text-align:center;
  }
+
+  //섹션 애니메이션
+  @mixin sectionAni{
+    opacity: 0;
+    transform: translateY(200px);
+    transition: all 0.7s ease;
+    &[data-on=on]{
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  //섹션 애니메이션 리셋
+  @mixin aniReset{
+    opacity: 1;
+    transform: translate(0);
+  }
