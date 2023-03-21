@@ -1,8 +1,25 @@
 @charset "UTF-8";
 header{
     position: relative;
+    width: 100%;
     height: 115px;
     z-index:70;
+    transition: all 0.2s ease;
+    &::before{
+        display: block;
+        position: absolute;
+        width:100%;
+        height:100%;
+        background-color: #fff;
+    }
+}
+.fixed header{
+    position: fixed;
+    transform: translateY(-25px);
+    &::before{
+        backdrop-filter: blur(5px);
+        background-color: rgba(255,255,255,0.5);
+    }
 }
 h1{font-size: 0;line-height: 0;}
 .accessibility{
@@ -40,21 +57,24 @@ h1{font-size: 0;line-height: 0;}
 .gnb {
     position: relative;
     text-align: right;
-    li{
-        display: inline-block;
-        a{
-            font-size:12px;
-            line-height: 20px;
-            color:#999;
-            letter-spacing: -0.025em;
-            &:hover{
-                color: $BrandColorYellow;
+    ul{
+        display: flex;
+        justify-content:flex-end;
+        gap: 16px;
+        li{
+            display: inline-block;
+            a{
+                font-size:12px;
+                line-height: 20px;
+                color:#999;
+                letter-spacing: -0.025em;
+                &:hover{
+                    color: $BrandColorYellow;
+                }
             }
         }
-        & + li{
-            margin-left: 20px;
-        }
     }
+    
     
 }
 

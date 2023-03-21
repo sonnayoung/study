@@ -9,8 +9,19 @@ try {
 		//$ 중복방지
 		(function ($) {
 			//태그객체
-			var $window = $(window);
+			var $window = $('window'),
+				$html = $('html');
 			$(function () {
+				//헤더 픽스
+				$(window).scroll(function() {
+					var windowTop = $(this).scrollTop();
+		
+					if(0 < windowTop) {
+						$('html').addClass("fixed");
+					} else {
+						$('html').removeClass("fixed");
+					}
+				})
 
 				//섹션 애니메이션
 				$(window).on('scroll', function(){
