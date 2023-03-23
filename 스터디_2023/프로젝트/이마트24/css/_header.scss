@@ -78,6 +78,8 @@ h1{font-size: 0;line-height: 0;}
     
 }
 
+
+
 .lnb{
     position: relative;
     
@@ -164,6 +166,9 @@ h1{font-size: 0;line-height: 0;}
     }
 }
 @include onlyPC {
+    .menu_show{
+        display: none;
+    }
     .lnb{
         .menu_hide,.menu_show{
             display: none;
@@ -172,4 +177,18 @@ h1{font-size: 0;line-height: 0;}
     .lnb_curtain{
         display: none;
     }
+}
+
+@include desktop{
+    .lnb .depth1{width:1000px;}
+    .lnb .depth1 .depth1_item{padding: 30px 56px 30px 0;}
+}
+@include tablet{
+    .lnb .depth1{width:94%}
+}
+@include mobile{
+    .gnb{display: none;}
+}
+@include mobile640{
+    
 }

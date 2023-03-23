@@ -1358,3 +1358,15 @@ body {
 
     
 }
+
+
+@include mobile {
+    .media{margin:96px 0;}
+    .media .wrap{flex-direction: column;}
+    .media .wrap .media_item{width:100%;padding: 16px 16px 24px 16px;border-radius:16px;}
+    .media .wrap .media_item h2{font-size:16px;}
+    .media .wrap .media_item li a .text{font-size:14px;}
+    .media .wrap .media_item li a .time{font-size:14px;}
+    .media .wrap .media_item .more{top:16px;right:16px;padding-right:20px;font-size:12px;}
+    .media .wrap .media_item .more:after{transform: scale(0.59);transform-origin: right;}
+}
