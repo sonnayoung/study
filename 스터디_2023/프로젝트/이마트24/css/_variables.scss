@@ -2,7 +2,8 @@
 $mobile640: 640px;
 $mobile: 800px;
 $tablet: 1000px;
-$desktop: 1280px;
+$desktop1280: 1280px;
+$desktop1440: 1440px;
 
 /*반응형, 브라우저 크기가 1001px 이상일때*/
 @mixin onlyPC{
@@ -10,9 +11,15 @@ $desktop: 1280px;
         @content;
     }
 }
+/*반응형, 브라우저 크기가 1400px 이하일때*/
+@mixin desktop1440{
+    @media (max-width: $desktop1440){
+        @content;
+    }
+}
 /*반응형, 브라우저 크기가 1280px 이하일때*/
-@mixin desktop{
-    @media (max-width: $desktop){
+@mixin desktop1280{
+    @media (max-width: $desktop1280){
         @content;
     }
 }

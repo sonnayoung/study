@@ -139,7 +139,7 @@ try {
 						infinite: true,
 						swipe: false,
 						draggable: false,
-
+						variableWidth:false,
 						//추가 기능
 						isRunOnLowIE: false,
 						pauseOnArrowClick: true,

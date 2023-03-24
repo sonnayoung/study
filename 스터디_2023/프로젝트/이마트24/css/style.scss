@@ -48,7 +48,7 @@ body {
 
 @include onlyPC {}
 
-@include desktop {
+@include desktop1280 {
     #wrapper {
         min-width: 1000px
     }
@@ -95,7 +95,9 @@ body {
                     height: 100%;
                     @include style_bg;
                 }
-
+                span.slide_pc {
+                    display: block;
+                }
                 span.slide_m {
                     display: none;
                 }
@@ -111,7 +113,7 @@ body {
         padding: 23px 33px 24px;
         background-color: #fff;
         border-radius: 15px;
-
+        box-shadow:0 8px 24px rgba(0, 0, 0, 0.05);
         .control_box {
             display: inline-block;
             font-size:0;
@@ -229,10 +231,27 @@ body {
     }
 }
 
+@include desktop1440{
+    .visual{width:calc(100% - 48px);}
+    .visual .slide_list .slide_item{height: 36vw;}
+    .visual .slide_control{left:0;}
+}
+@include mobile{
+    .visual .slide_list .slide_item a span.slide_pc{display: none;}
+    .visual .slide_list .slide_item a span.slide_m{display: block;}
+    .visual .slide_control{position:static;width:100%;padding:0;background-color: transparent;box-shadow:none;}
+    .visual .slide_control .control_box{display: none;}
+    .visual .slide_control .count_box{width:100%;margin-left:0;}
+    .visual .slide_control .count_box .current, .visual .slide_control .count_box .total{display: none;}
+    .visual .slide_control .count_box .progress{width: 100%;}
+    .visual .slide_control .count_box .progress .total_bar{background-color:transparent;}
+}
+
 
 .event {
     margin-top: 127px;
     @include sectionAni;
+
     h2 {
         font-size: 45px;
         line-height: 50px;
@@ -240,8 +259,9 @@ body {
     }
 
     .tab_menu {
-        float: left;
         width: 285px;
+        min-width: 265px;
+        margin-right: 36px;
         margin-top: 78px;
 
         .tab_item {
@@ -337,10 +357,10 @@ body {
     }
 
     .event_tab {
+        display: flex;
+        flex-direction: row;
         .tab_content {
             display: none;
-            float: right;
-            width: 915px;
             margin-top: -50px;
         }
 
@@ -350,6 +370,9 @@ body {
     }
 
     .event_slide {
+        .slick-list{
+            margin-right: -16px;
+        }
         .slide_item {
             position: relative;
             text-align: center;

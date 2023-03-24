@@ -1,0 +1,75 @@
+@mixin appearance ($opt : none) {
+	-webkit-appearance: $opt;
+	-moz-appearance: $opt;
+	appearance: $opt;
+}
+@mixin borderRadius ($size) {
+	-webkit-border-radius: $size;
+	-moz-border-radius: $size;
+	border-radius: $size;
+}
+
+@mixin blur($val : 1px){
+	-webkit-filter: blur($val); /* Safari */
+	filter: blur($val);
+}
+@mixin boxShadow($p) {
+	-moz-box-shadow:$p;
+	-webkit-box-shadow:$p;
+	box-shadow:$p;
+}
+@mixin boxSizing() {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+@mixin background($url, $x, $y, $size : 100% 100%, $repeat : no-repeat){
+	background:url($url) $repeat $x $y;
+	background-size:$size;
+}
+/* background size 기본값 100% 100% repeat 기본값 no-repeat이므로 기본값에서 달라지지 않는다면
+	@include background($url, $x, $y)로 작성
+*/
+
+@mixin borderSet($width : 1px, $style : solid, $color : $gray2){
+	border-width:$width; border-style:solid; border-color:$color;
+}
+
+@mixin placeholder($font-size, $color, $line-height){
+	&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		color: $color;
+		line-height: $line-height;
+		font-size: $font-size;
+	}
+	&::-moz-placeholder { /* Firefox 19+ */
+		color: $color;
+		line-height: $line-height;
+		font-size: $font-size;
+	}
+	&:-ms-input-placeholder { /* IE 10+ */
+		color: $color;
+		line-height: $line-height;
+		font-size: $font-size;
+	}
+	&:-moz-placeholder { /* Firefox 18- */
+		color: $color;
+		line-height: $line-height;
+		font-size: $font-size;
+	}
+}
+
+@mixin textLeftLine(){
+	&:before {
+		width:32px; height:2px; background-color:$gray2; position:absolute; content:""; display:block;
+		left:-57px; top:50%; margin:-1px 0 0;
+	}
+}
+
+%clearfix {
+	&:after {
+		content: " ";
+		display: block;
+		clear: both;
+	}
+}
