@@ -54,6 +54,16 @@
       @include sprite_img(24px, 24px, '../images/main_sprite.png' , -69px -2px)
 
   }
+  @include mobile {
+    top:16px;
+    right:16px;
+    padding-right:20px;
+    font-size:12px;
+    &:after{
+      transform: scale(0.59);
+      transform-origin: right;
+    }
+  }
  }
 
  //노란버튼

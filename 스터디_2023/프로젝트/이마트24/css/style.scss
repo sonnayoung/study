@@ -260,9 +260,13 @@ body {
 
     .tab_menu {
         width: 285px;
-        min-width: 265px;
+        min-width: 285px;
         margin-right: 36px;
         margin-top: 78px;
+        .tab_list{
+            display: flex;
+            flex-direction: column;
+        }
 
         .tab_item {
             transition: all 0.2s ease-in-out;
@@ -361,15 +365,17 @@ body {
         flex-direction: row;
         .tab_content {
             display: none;
+            width: calc(100% - 285px);
             margin-top: -50px;
         }
 
         .tab_content.active {
-            display: block;
+            display: flex;
         }
     }
 
     .event_slide {
+        width: 100%;
         .slick-list{
             margin-right: -16px;
         }
@@ -389,9 +395,9 @@ body {
                     background-color: $BrandColorYellow;
                     font-size: 11px;
                     line-height: 20px;
-                    ;
                     font-weight: 300;
                     color: $White;
+                    z-index: 1;
                 }
 
                 .img_box {
@@ -481,7 +487,22 @@ body {
     }
 }
 
-@include mobile {}
+@include mobile {
+    .event h2{font-size: 18px;line-height: 24px;}
+    .event .event_tab{flex-direction: column;}
+    
+    .event .tab_menu{width: 100%;min-width: none;margin: 0;margin-top:12px;}
+    .event .tab_menu .tab_list{flex-direction: row;justify-content:space-between;gap: 8px;}
+    .event .tab_menu .tab_item{width: 100%;}
+    .event .tab_menu .tab_item + .tab_item{margin-top: 0;}
+    .event .tab_menu .tab_item .tab_btn{padding:9px 40px;border:0.5px solid #ebebeb;border-radius:16px;font-size: 14px;text-align: center;box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);}
+    .event .tab_menu .tab_item .tab_btn span{vertical-align: middle;}
+    .event .tab_menu .tab_item .tab_btn::before{display:inline-block;position:static;margin-right:10px;transform: scale(0.85);vertical-align: middle;}
+    .event .tab_menu .tab_item .tab_btn::after{display: none;}
+    .event .tab_menu .tab_item .tab_btn:hover{width:100%;}
+    .event .event_tab .tab_content{width:100%;margin-top: 20px;}
+    .event .more{top:0;right: 0;}
+}
 
 .only_emart {
     margin-top: 155px;
@@ -1390,6 +1411,4 @@ body {
     .media .wrap .media_item h2{font-size:16px;}
     .media .wrap .media_item li a .text{font-size:14px;}
     .media .wrap .media_item li a .time{font-size:14px;}
-    .media .wrap .media_item .more{top:16px;right:16px;padding-right:20px;font-size:12px;}
-    .media .wrap .media_item .more:after{transform: scale(0.59);transform-origin: right;}
 }

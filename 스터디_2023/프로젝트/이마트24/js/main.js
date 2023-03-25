@@ -148,11 +148,48 @@ try {
 						pauseOnDotsClick: true,
 						responsive: [
 							{
-								breakpoint: 1451,
+								breakpoint: 1001,
 								settings: {
 									swipe: true,
 									draggable: true,
-									swipeToSlide: true
+									swipeToSlide: true,
+									slidesToShow: 3,
+									slidesToScroll: 3,
+
+								}
+							},
+							{
+								breakpoint: 851,
+								settings: {
+									swipe: true,
+									draggable: true,
+									swipeToSlide: true,
+									slidesToShow: 2,
+									slidesToScroll: 2,
+
+								}
+							},
+							{
+								breakpoint: 801,
+								settings: {
+									swipe: true,
+									draggable: true,
+									swipeToSlide: true,
+									slidesToShow: 3,
+									slidesToScroll: 3,
+
+								}
+							}
+							,
+							{
+								breakpoint: 601,
+								settings: {
+									swipe: true,
+									draggable: true,
+									swipeToSlide: true,
+									slidesToShow: 2,
+									slidesToScroll: 2,
+
 								}
 							}
 						]
