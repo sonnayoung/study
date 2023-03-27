@@ -15,6 +15,7 @@ header{
 }
 .fixed header{
     position: fixed;
+    left: 0;
     transform: translateY(-25px);
     &::before{
         backdrop-filter: blur(5px);

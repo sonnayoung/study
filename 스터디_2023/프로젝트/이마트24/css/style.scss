@@ -30,8 +30,10 @@ a:active {
 
 #wrapper {
     position: relative;
+    max-width: 1920px;
     min-width: 1232px;
     overflow: hidden;
+    margin: 0 auto;
 }
 
 .wrap {
@@ -237,6 +239,9 @@ body {
     .visual .slide_control{left:0;}
 }
 @include mobile{
+    .visual{width:94%;}
+    .visual .slide_list{border-radius:0 0 16px 16px;}
+    .visual .slide_list .slide_item{height:45vw;}
     .visual .slide_list .slide_item a span.slide_pc{display: none;}
     .visual .slide_list .slide_item a span.slide_m{display: block;}
     .visual .slide_control{position:static;width:100%;padding:0;background-color: transparent;box-shadow:none;}
@@ -253,8 +258,8 @@ body {
     @include sectionAni;
 
     h2 {
+        @include h2FontSize;
         font-size: 45px;
-        line-height: 50px;
         color: $BasicColor;
     }
 
@@ -488,7 +493,7 @@ body {
 }
 
 @include mobile {
-    .event h2{font-size: 18px;line-height: 24px;}
+    .event{margin-top:64px;}
     .event .event_tab{flex-direction: column;}
     
     .event .tab_menu{width: 100%;min-width: none;margin: 0;margin-top:12px;}
@@ -509,8 +514,7 @@ body {
     @include sectionAni;
     .title_box {
         h2 {
-            font-size: 48px;
-            line-height: 50px;
+            @include h2FontSize;
             color: $Black;
         }
 
@@ -628,6 +632,11 @@ body {
 
 
 }
+@include desktop1280 {
+}
+@include mobile {
+    .only_emart .title_box span{display: none;}
+}
 
 @keyframes gray {
     0% {
@@ -727,8 +736,7 @@ body {
 
     .title_box {
         h2 {
-            font-size: 48px;
-            line-height: 50px;
+            @include h2FontSize;
             color: $Black;
         }
 
@@ -868,7 +876,6 @@ body {
     }
 }
 @include desktop1280{
-    .buisness .title_box h2{font-size:38px;}
     .buisness .buisness_list li{height:377px;border-radius:24px;}
     .buisness .buisness_list li a .title{font-size:24px;}
     .buisness .buisness_list li a p{font-size:16px;}
@@ -1187,8 +1194,7 @@ body {
     .title_box{
         float: left;
         h2{
-            font-size:48px;
-            line-height:52px;
+            @include h2FontSize;
             font-weight:700;
             em{
                 display: block;
@@ -1416,7 +1422,6 @@ body {
 }
 @include mobile{
     .story{margin-top: 96px;}
-    .story .title_box h2{font-size:18px;line-height:24px;}
     .story .title_box h2 em{display: inline-block;font-weight:600;}
     .story .title_box span{display:none;}
     .story .title_box .sns_list{display: none;}

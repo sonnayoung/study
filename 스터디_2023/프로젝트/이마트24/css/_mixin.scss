@@ -35,7 +35,21 @@
   line-height: 0;
  }
 
- //more
+  //h2 폰트사이즈
+  @mixin h2FontSize{
+    font-size:48px;
+    line-height:50px;
+    @include desktop1280 {
+      font-size:38px;
+      line-height:40px;
+    }
+    @include mobile {
+      font-size:18px;
+      line-height:28px;
+    }
+  }
+
+ //more 버튼
  @mixin more{
   position: absolute;
   padding-right:33px;
