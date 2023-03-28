@@ -500,7 +500,7 @@ body {
     .event .tab_menu .tab_list{flex-direction: row;justify-content:space-between;gap: 8px;}
     .event .tab_menu .tab_item{width: 100%;}
     .event .tab_menu .tab_item + .tab_item{margin-top: 0;}
-    .event .tab_menu .tab_item .tab_btn{padding:9px 40px;border:0.5px solid #ebebeb;border-radius:16px;font-size: 14px;text-align: center;box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);}
+    .event .tab_menu .tab_item .tab_btn{padding:9px 0;border:0.5px solid #ebebeb;border-radius:16px;font-size: 14px;text-align: center;box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);}
     .event .tab_menu .tab_item .tab_btn span{vertical-align: middle;}
     .event .tab_menu .tab_item .tab_btn::before{display:inline-block;position:static;margin-right:10px;transform: scale(0.85);vertical-align: middle;}
     .event .tab_menu .tab_item .tab_btn::after{display: none;}

@@ -68,7 +68,7 @@ input[type="submit"]{cursor:pointer;}
 
 .skip{overflow:hidden;}
 
-.header_top .menu_show{display:none; visibility:visible; position:absolute; top:19px; right:0; z-index:5; width:28px;}
+.header_top .menu_show{display:none; visibility:visible; position:absolute; top:18px; right:0; z-index:5; width:28px;}
 .header_top .menu_show .menu_button{display:block; position:relative; width:100%; height:28px; border:none; color:transparent; font-size:0;}
 .header_top .menu_show .menu_button:before{display:block; position:absolute; top:7px; right:5px; width:18px; height:16px; background-repeat:no-repeat; background-position:-186px -90px;; background-image:url('../images/main_sprite.png'); content:'';}
 
