@@ -634,8 +634,20 @@ body {
 }
 @include desktop1280 {
 }
+@include tablet {
+    .only_emart .only_slide{margin-top:50px;}
+    .only_emart .only_slide .slick-list {padding:20px 0 80px;}
+    .only_emart .only_slide .slide_item{opacity:0;}
+    .only_emart .only_slide .slide_item.slick-active{opacity:1;}
+    .only_emart .only_slide .slide_item a .img_box{height:30vw;}
+    .only_emart .only_slide .slide_item .item_logo img{display:inline-block;width:auto;}
+    .only_emart .only_slide .slide_item a .text_box{padding:0 15px 24px;}
+    .only_emart .only_slide .slide_item a .text_box .title{font-size:17px;}
+    .only_emart .only_slide .slide_item a .text_box p{height:40px;font-size:15px;line-height:20px;;}
+}
 @include mobile {
     .only_emart .title_box span{display: none;}
+    
 }
 
 @keyframes gray {
@@ -725,8 +737,8 @@ body {
         display: block;
         position: absolute;
         bottom: 0;
-        left: 216px;
-        width: 1800px;
+        right: 0;
+        width: calc(50vw + 744px);
         height: 100%;
         border-radius: 64px 0px 0px 192px;
         background: linear-gradient(#fece6a, #fee6b4);
@@ -875,6 +887,9 @@ body {
         }
     }
 }
+@media all and (max-width:1520px){
+    .buisness::before{width:calc(50vw + 700px);}
+}
 @include desktop1280{
     .buisness .buisness_list li{height:377px;border-radius:24px;}
     .buisness .buisness_list li a .title{font-size:24px;}
@@ -884,17 +899,32 @@ body {
     .buisness .buisness_list li:nth-child(2) .icon span:before{height:180px;}
 }
 @include tablet{
+    .buisness{margin-top:160px;padding:70px 0}
     .buisness .buisness_list li{height:40vw;}
     .buisness .buisness_list li a .icon::before{height:17vw;}
     .buisness .buisness_list li:nth-child(2) .icon span:before{height:17vw}
     .buisness .buisness_list li:nth-child(2) .icon::after{height:17vw;}
 }
 @include mobile{
+    .buisness{margin-top:40px;padding:25px 0}
+    .buisness::before{background:#ffebc1;}
+    .buisness .title_box span{display: none;}
     .buisness .buisness_list{display: flex;flex-direction: column;gap:16px;}
     .buisness .buisness_list li{width:100%;height:auto;box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);}
+    .buisness .buisness_list li:hover{transform: translateY(0);}
     .buisness .buisness_list li::before{display: none;}
+    .buisness .buisness_list li a .icon{bottom:calc(50% - 55px);left:auto;right:0;width:154px;}
+    .buisness .buisness_list li a .icon::before{height:110px;}
+    .buisness .buisness_list li:nth-child(2) .icon span:before{height:110px}
+    .buisness .buisness_list li:nth-child(2) .icon::after{height:110px;}
+    .buisness .buisness_list li:hover .icon::before{animation: none !important;}
+    .buisness .buisness_list li:hover .icon::after{animation: none !important;}
     .buisness .buisness_list li a .title{margin-bottom:0;font-size:16px;}
     .buisness .buisness_list li a p{font-size:14px;line-height:24px;color: $gray;}
+}
+@media all and (max-width:480px){
+    .buisness .buisness_list li a .icon{width:120px;}
+
 }
 
 @keyframes pin {
@@ -1258,7 +1288,7 @@ body {
     .sns_slide{
         position: relative;
         float: right;
-        width: 908px;
+        width: calc(100% - 314px);
         height: 561px;
         .odd{
             .slide_item{
@@ -1420,13 +1450,23 @@ body {
         }
     }
 }
+@include desktop1280{
+    .story .sns_slide .slide_item{width:222px;}
+    .story .sns_slide .slide_item a .img_box{height:335px;}
+}
+@include tablet{
+    .story .sns_slide .slide_item a .img_box{border-radius:24px;}
+    .story .sns_slide .slide_item:nth-child(2n - 1) .img_box{border-radius:24px;}
+}
 @include mobile{
     .story{margin-top: 96px;}
     .story .title_box h2 em{display: inline-block;font-weight:600;}
     .story .title_box span{display:none;}
     .story .title_box .sns_list{display: none;}
-    .story .sns_slide{margin-top:16px;}
+    .story .sns_slide{margin-top:16px;width:100%;}
+    .story .sns_slide .odd .slide_item:nth-child(odd){margin-top:0;}
     .story .sns_slide .even .slide_item:nth-child(even){margin-top:0;}
+    
     
 }
 

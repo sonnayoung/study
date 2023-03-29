@@ -226,7 +226,6 @@ try {
 						infinite: false,
 						swipe: false,
 						draggable: false,
-						centerMode: true,
 						responsive: [
 							{
 								breakpoint: 9999,
@@ -237,7 +236,16 @@ try {
 								settings: {
 									swipe: true,
 									draggable: true,
-									swipeToSlide: true
+									swipeToSlide: true,
+								}
+							},
+							{
+								breakpoint: 801,
+								settings: {
+									swipe: true,
+									draggable: true,
+									swipeToSlide: true,
+									centerMode: true,
 								}
 							}
 						]
@@ -271,11 +279,16 @@ try {
 					pauseOnDotsClick: true,
 					responsive: [
 						{
-							breakpoint: 1451,
+							breakpoint: 1001,
 							settings: {
 								swipe: true,
 								draggable: true,
-								swipeToSlide: true
+								swipeToSlide: true,
+								variableWidth:false,
+								centerMode:true,
+								slidesToShow: 1,
+								centerPadding: '100px',
+								initialSlide: 1
 							}
 						}
 					]
