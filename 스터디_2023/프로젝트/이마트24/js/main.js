@@ -246,10 +246,13 @@ try {
 									draggable: true,
 									swipeToSlide: true,
 									centerMode: true,
+									initialSlide: 1,
+									slidesToShow: 1,
 								}
 							}
 						]
 					});
+
 				});
 				
 
@@ -287,7 +290,7 @@ try {
 								variableWidth:false,
 								centerMode:true,
 								slidesToShow: 1,
-								centerPadding: '100px',
+								centerPadding: '20%',
 								initialSlide: 1
 							}
 						}
