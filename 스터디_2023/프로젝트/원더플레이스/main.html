@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="사이트 제목">
+    <meta name="keywords" content="키워드 입력">
+    <meta name="description" content="사이트 상세설명">
+    <meta name="format-detection" content="telephone=no">
+    <meta property="og:site_name" content="사이트명 표시">
+    <meta property="og:url" content="url 표기">
+    <meta property="og:image" content="대표 이미지 경로">
+    <meta property="og:title" content="페이지 제목 표시">
+    <meta property="og:description" content="페이지 설명 표시">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" type="text/css" href="./css/defalut.css">
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="./js/jquery-1.12.4.HS-20200709.min.js"></script>
+    <script src="./js/jquery.screen.min.js"></script>
+    <script src="./js/slick.min.custom.1.6.0.10.js"></script>
+    <script src="./js/slick.extensions.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/main.js"></script>
+    <title>이마트24 - scss사용하기</title>
+
+</head>
+
+<body id="main" class="main">
+    <h1>이마트24</h1>
+    <div class="accessibility">
+        <a href="#container">본문 바로가기</a>
+    </div>
+    <div id="wrapper">
+        <header id="header">
+            <div class="header_top">
+                <div class="wrap">
+                    <div class="logo">
+                        <a href=""><img src="./images/logo.png" alt="이마트24 로고"></a>
+                    </div>
+                    <div class="gnb">
+                        <ul>
+                            <li><a href="">고객센터</a></li>
+                            <li><a href="">이마트24 소개</a></li>
+                            <li><a href="">채용안내</a></li>
+                            <li><a href="">전자 계약 시스템</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu_show">
+                        <button type="button" class="menu_button">메뉴열기</button>
+                    </div>
+                </div>
+            </div>
+            <div class="lnb">
+                <div class="lnb_topbox"><a href=""><img src="./images/logo_white.png" alt=""></a></div>
+                <nav class="menu after pulldown">
+                    <h2 class="skip">메뉴</h2>
+                    <div class="depth depth1">
+                        <ul class="depth_list depth1_list clearfix">
+                            <li class="depth_item depth1_item">
+                                <a href="" class="depth_text depth1_text"><span>상품</span></a>
+                                <div class="depth depth2">
+                                    <ul class="depth_list depth2_list clearfix">
+                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank"
+                                                class="depth_text depth2_text"><span>행사 상품</span></a></li>
+                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank"
+                                                class="depth_text depth2_text"><span>차별화 상품</span></a></li>
+                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank"
+                                                class="depth_text depth2_text"><span>Fresh Food</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="depth_item depth1_item">
+                                <a href="" class="depth_text depth1_text"><span>매장찾기</span></a>
+                                <div class="depth depth2">
+                                    <ul class="depth_list depth2_list clearfix">
+                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank"
+                                                class="depth_text depth2_text"><span>매장찾기</span></a></li>
+                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank"
+                                                class="depth_text depth2_text"><span>3D 매장 체험</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="depth_item depth1_item">
+                                <a href="" class="depth_text depth1_text"><span>서비스</span></a>
+                                <div class="depth depth2">
+                                    <ul class="depth_list depth2_list clearfix">
+                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank"
+                                                class="depth_text depth2_text"><span>APP 서비스</span></a></li>
+                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank"
+                                                class="depth_text depth2_text"><span>생활 서비스</span></a></li>
+                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank"
+                                                class="depth_text depth2_text"><span>제휴 서비스</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="depth_item depth1_item">
+                                <a href="" class="depth_text depth1_text"><span>이벤트</span></a>
+                                <div class="depth depth2">
+                                    <ul class="depth_list depth2_list clearfix">
+                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank"
+                                                class="depth_text depth2_text"><span>진행중인 이벤트</span></a></li>
+                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank"
+                                                class="depth_text depth2_text"><span>종료된 이벤트</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="depth_item depth1_item">
+                                <a href="" class="depth_text depth1_text"><span>창업안내</span></a>
+                                <div class="depth depth2">
+                                    <ul class="depth_list depth2_list clearfix">
+                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank"
+                                                class="depth_text depth2_text"><span>이마트24 특징</span></a></li>
+                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank"
+                                                class="depth_text depth2_text"><span>창업 가이드</span></a></li>
+                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank"
+                                                class="depth_text depth2_text"><span>창업 설명회</span></a></li>
+                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank"
+                                                class="depth_text depth2_text"><span>창업 성공기</span></a></li>
+                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank"
+                                                class="depth_text depth2_text"><span>창업 상담</span></a></li>
+                                        <li class="depth_item depth2_item clearfix"><a href="" target="_blank"
+                                                class="depth_text depth2_text"><span>추천 매장 소개</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="lnb_link">
+                        <ul>
+                            <li><a href="">고객센터</a></li>
+                            <li><a href="">이마트24 소개</a></li>
+                            <li><a href="">채용안내</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                
+                <div class="menu_hide">
+                    <button type="button" class="menu_button">메뉴 닫기</button>
+                </div>
+            </div>
+            <div class="lnb_curtain"><button type="button">메뉴 닫기</button></div>
+        </header>
+        <main id="container">
+            <section class="visual">
+                <h2 class="skip">비주얼 슬라이드</h2>
+
+                <div class="slide_list">
+                    <div class="slide_item">
+                        <a href="">
+                            <span class="slide_pc" style="background-image:url(./images/visual01.png);">슬라이드
+                                대체텍스트</span>
+                            <span class="slide_m" style="background-image:url(./images/visual01_m.png);">슬라이드
+                                대체텍스트</span>
+                        </a>
+                    </div>
+                    <div class="slide_item">
+                        <a href="">
+                            <span class="slide_pc" style="background-image:url(./images/visual02.png);">슬라이드
+                                대체텍스트</span>
+                            <span class="slide_m" style="background-image:url(./images/visual02_m.png);">슬라이드
+                                대체텍스트</span>
+                        </a>
+                    </div>
+                    <div class="slide_item">
+                        <a href="">
+                            <span class="slide_pc" style="background-image:url(./images/visual03.png);">슬라이드
+                                대체텍스트</span>
+                            <span class="slide_m" style="background-image:url(./images/visual03_m.png);">슬라이드
+                                대체텍스트</span>
+                        </a>
+                    </div>
+                    <div class="slide_item">
+                        <a href="">
+                            <span class="slide_pc" style="background-image:url(./images/visual04.png);">슬라이드
+                                대체텍스트</span>
+                            <span class="slide_m" style="background-image:url(./images/visual04_m.png);">슬라이드
+                                대체텍스트</span>
+                        </a>
+                    </div>
+                    <div class="slide_item">
+                        <a href="">
+                            <span class="slide_pc" style="background-image:url(./images/visual01.png);">슬라이드
+                                대체텍스트</span>
+                            <span class="slide_m" style="background-image:url(./images/visual01_m.png);">슬라이드
+                                대체텍스트</span>
+                        </a>
+                    </div>
+                    <div class="slide_item">
+                        <a href="">
+                            <span class="slide_pc" style="background-image:url(./images/visual02.png);">슬라이드
+                                대체텍스트</span>
+                            <span class="slide_m" style="background-image:url(./images/visual02_m.png);">슬라이드
+                                대체텍스트</span>
+                        </a>
+                    </div>
+                    <div class="slide_item">
+                        <a href="">
+                            <span class="slide_pc" style="background-image:url(./images/visual03.png);">슬라이드
+                                대체텍스트</span>
+                            <span class="slide_m" style="background-image:url(./images/visual03_m.png);">슬라이드
+                                대체텍스트</span>
+                        </a>
+                    </div>
+                    <div class="slide_item">
+                        <a href="">
+                            <span class="slide_pc" style="background-image:url(./images/visual04.png);">슬라이드
+                                대체텍스트</span>
+                            <span class="slide_m" style="background-image:url(./images/visual04_m.png);">슬라이드
+                                대체텍스트</span>
+                        </a>
+                    </div>
+                    <div class="slide_item">
+                        <a href="">
+                            <span class="slide_pc" style="background-image:url(./images/visual01.png);">슬라이드
+                                대체텍스트</span>
+                            <span class="slide_m" style="background-image:url(./images/visual01_m.png);">슬라이드
+                                대체텍스트</span>
+                        </a>
+                    </div>
+                    <div class="slide_item">
+                        <a href="">
+                            <span class="slide_pc" style="background-image:url(./images/visual02.png);">슬라이드
+                                대체텍스트</span>
+                            <span class="slide_m" style="background-image:url(./images/visual02_m.png);">슬라이드
+                                대체텍스트</span>
+                        </a>
+                    </div>
+                    <div class="slide_item">
+                        <a href="">
+                            <span class="slide_pc" style="background-image:url(./images/visual03.png);">슬라이드
+                                대체텍스트</span>
+                            <span class="slide_m" style="background-image:url(./images/visual03_m.png);">슬라이드
+                                대체텍스트</span>
+                        </a>
+                    </div>
+                    <div class="slide_item">
+                        <a href="">
+                            <span class="slide_pc" style="background-image:url(./images/visual04.png);">슬라이드
+                                대체텍스트</span>
+                            <span class="slide_m" style="background-image:url(./images/visual04_m.png);">슬라이드
+                                대체텍스트</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="slide_control">
+                    <div class="control_box">
+                        <button type="button" class="auto">멈춤</button>
+                        <button type="button" class="prev">이전</button>
+                        <button type="button" class="next">다음</button>
+                    </div>
+                    <div class="count_box">
+                        <span class="current"></span>
+                        <div class="progress">
+                            <div class="total_bar">
+                                <div class="state_bar"></div>
+                                <div class="thumbnail_box"></div>
+                            </div>
+                        </div>
+                        <span class="total"></span>
+                    </div>
+                </div>
+
+            </section>
+            <section class="event scroll_ani">
+                <!-- 슬라이드가 자동롤링이면 멈춤버튼이 있어야 접근성위배가 안된다고 들었는데? -->
+                <div class="wrap">
+                    <h2>2월 행사 상품</h2>
+                    <div class="event_tab clearfix">
+                        <div class="tab_menu">
+                            <div class="tab_list">
+                                <div class="tab_item active"><button type="button"
+                                        class="tab_btn"><span>1+1</span></button></div>
+                                <div class="tab_item"><button type="button" class="tab_btn"><span>2+1</span></button>
+                                </div>
+                                <div class="tab_item"><button type="button" class="tab_btn"><span>신상품</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab_content active">
+                            <div class="event_slide">
+                                <div class="slide_list">
+                                    <div class="slide_item">
+                                        <a href="">
+                                            <div class="category">1+1</div>
+                                            <div class="img_box"><img src="./images/item1.png"
+                                                    alt="슈가)베이킹소다수주방세제540ml 이미지"></div>
+                                            <div class="text_box">
+                                                <h3 class="title">슈가)베이킹소다수주방세제540ml</h3>
+                                                <span class="price">7,900 원</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="slide_item">
+                                        <a href="">
+                                            <div class="category">1+1</div>
+                                            <div class="img_box"><img src="./images/item2.png" alt="빙그레)딸기타임200ml 이미지">
+                                            </div>
+                                            <div class="text_box">
+                                                <h3 class="title">빙그레)딸기타임200ml</h3>
+                                                <span class="price">1,100 원</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="slide_item">
+                                        <a href="">
+                                            <div class="category">1+1</div>
+                                            <div class="img_box"><img src="./images/item3.png"
+                                                    alt="슈가)베이킹소다수주방세제540ml 이미지"></div>
+                                            <div class="text_box">
+                                                <h3 class="title">슈가)베이킹소다수주방세제540ml</h3>
+                                                <span class="price">7,900 원</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="slide_item">
+                                        <a href="">
+                                            <div class="category">1+1</div>
+                                            <div class="img_box"><img src="./images/item4.png" alt="빙그레)딸기타임200ml 이미지">
+                                            </div>
+                                            <div class="text_box">
+                                                <h3 class="title">빙그레)딸기타임200ml</h3>
+                                                <span class="price">1,100 원</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="slide_item">
+                                        <a href="">
+                                            <div class="category">1+1</div>
+                                            <div class="img_box"><img src="./images/item3.png"
+                                                    alt="슈가)베이킹소다수주방세제540ml 이미지"></div>
+                                            <div class="text_box">
+                                                <h3 class="title">슈가)베이킹소다수주방세제540ml</h3>
+                                                <span class="price">7,900 원</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="slide_item">
+                                        <a href="">
+                                            <div class="category">1+1</div>
+                                            <div class="img_box"><img src="./images/item4.png" alt="빙그레)딸기타임200ml 이미지">
+                                            </div>
+                                            <div class="text_box">
+                                                <h3 class="title">빙그레)딸기타임200ml</h3>
+                                                <span class="price">1,100 원</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dots"></div>
+                            </div>
+                        </div>
+                        <div class="tab_content">
+                            <div class="event_slide">
+                                <div class="slide_list">
+                                    <div class="slide_item">
+                                        <a href="">
+                                            <div class="category">2+1</div>
+                                            <div class="img_box"><img src="./images/item3.png" alt="롯데)칠성사이다제로1.5L 이미지">
+                                            </div>
+                                            <div class="text_box">
+                                                <h3 class="title">롯데)칠성사이다제로1.5L</h3>
+                                                <span class="price">2,500 원</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="slide_item">
+                                        <a href="">
+                                            <div class="category">2+1</div>
+                                            <div class="img_box"><img src="./images/item4.png"
+                                                    alt="오든든)껍질없는간편한조각사과150g 이미지"></div>
+                                            <div class="text_box">
+                                                <h3 class="title">오든든)껍질없는간편한조각사과150g</h3>
+                                                <span class="price">2,500 원</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="slide_item">
+                                        <a href="">
+                                            <div class="category">2+1</div>
+                                            <div class="img_box"><img src="./images/item3.png" alt="롯데)칠성사이다제로1.5L 이미지">
+                                            </div>
+                                            <div class="text_box">
+                                                <h3 class="title">롯데)칠성사이다제로1.5L</h3>
+                                                <span class="price">2,200 원</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="slide_item">
+                                        <a href="">
+                                            <div class="category">2+1</div>
+                                            <div class="img_box"><img src="./images/item4.png"
+                                                    alt="오든든)껍질없는간편한조각사과150g 이미지"></div>
+                                            <div class="text_box">
+                                                <h3 class="title">오든든)껍질없는간편한조각사과150g</h3>
+                                                <span class="price">2,500 원</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dots"></div>
+                            </div>
+                        </div>
+                        <div class="tab_content">
+                            <div class="event_slide">
+                                <div class="slide_list">
+                                    <div class="slide_item">
+                                        <a href="">
+                                            <div class="category">NEW</div>
+                                            <div class="img_box"><img src="./images/item5.png"
+                                                    alt="동원)친친오리지널소시지70g 이미지"></div>
+                                            <div class="text_box">
+                                                <h3 class="title">동원)친친오리지널소시지70g</h3>
+                                                <span class="price">1,900 원</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="slide_item">
+                                        <a href="">
+                                            <div class="category">NEW</div>
+                                            <div class="img_box"><img src="./images/item4.png"
+                                                    alt="오든든)껍질없는간편한조각사과150g 이미지"></div>
+                                            <div class="text_box">
+                                                <h3 class="title">오든든)껍질없는간편한조각사과150g</h3>
+                                                <span class="price">2,500 원</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="slide_item">
+                                        <a href="">
+                                            <div class="category">NEW</div>
+                                            <div class="img_box"><img src="./images/item4.png"
+                                                    alt="오든든)껍질없는간편한조각사과150g 이미지"></div>
+                                            <div class="text_box">
+                                                <h3 class="title">오든든)껍질없는간편한조각사과150g</h3>
+                                                <span class="price">2,500 원</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="slide_item">
+                                        <a href="">
+                                            <div class="category">NEW</div>
+                                            <div class="img_box"><img src="./images/item5.png"
+                                                    alt="동원)친친오리지널소시지70g 이미지"></div>
+                                            <div class="text_box">
+                                                <h3 class="title">동원)친친오리지널소시지70g</h3>
+                                                <span class="price">1,900 원</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="slide_item">
+                                        <a href="">
+                                            <div class="category">NEW</div>
+                                            <div class="img_box"><img src="./images/item4.png"
+                                                    alt="오든든)껍질없는간편한조각사과150g 이미지"></div>
+                                            <div class="text_box">
+                                                <h3 class="title">오든든)껍질없는간편한조각사과150g</h3>
+                                                <span class="price">2,500 원</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="dots"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="" class="more"><span>전체보기</span></a>
+                </div>
+            </section>
+            <section class="only_emart scroll_ani">
+                <div class="wrap">
+                    <div class="title_box">
+                        <h2>ONLY 이마트24</h2>
+                        <span>이마트24에서만 있는 차별화 상품을 만나보세요.</span>
+                    </div>
+                    <div class="only_slide">
+                        <div class="slide_list">
+                            <div class="slide_item">
+                                <a href="">
+                                    <div class="img_box"><span
+                                            style="background-image: url(./images/only1.png);">아임이</span></div>
+                                    <div class="text_box">
+                                        <div class="item_logo"><img src="./images/only_logo1.png" alt="아임이로고"></div>
+                                        <div class="title">아임이</div>
+                                        <p>사는 맛, 딱 한 방울</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="slide_item">
+                                <a href="">
+                                    <div class="img_box"><span style="background-image: url(./images/only2.png);">Fresh
+                                            Food</span></div>
+                                    <div class="text_box">
+                                        <div class="item_logo"><img src="./images/only_logo2.png" alt="Fresh Food 로고">
+                                        </div>
+                                        <div class="title">Fresh Food</div>
+                                        <p>차별화 된 이마트24 Fresh Food</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="slide_item">
+                                <a href="">
+                                    <div class="img_box"><span
+                                            style="background-image: url(./images/only3.png);">김토끼</span></div>
+                                    <div class="text_box">
+                                        <div class="item_logo"><img src="./images/only_logo3.png" alt="김토끼 로고"></div>
+                                        <div class="title">김토끼 스튜됴</div>
+                                        <p>2023년 토끼해를 맞이하여, 김토끼 콜라보</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="slide_item">
+                                <a href="">
+                                    <div class="img_box"><span
+                                            style="background-image: url(./images/only4.png);">점신</span></div>
+                                    <div class="text_box">
+                                        <div class="item_logo"><img src="./images/only_logo4.png" alt="점신 로고"></div>
+                                        <div class="title">점신</div>
+                                        <p>2023년 운세 제작소 점신 콜라보!</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="buisness scroll_ani">
+                <div class="wrap">
+                    <div class="title_box">
+                        <h2>창업 안내</h2>
+                        <span>이마트24의 스마트한 창업설계를 받아보세요.</span>
+                    </div>
+                    <ul class="buisness_list">
+                        <li class="n1">
+                            <a href="">
+                                <i class="icon"></i>
+                                <div class="title">창업 가이드</div>
+                                <p>이마트24는 경영주님과 <br>협력적 가치를 공유합니다.</p>
+                            </a>
+                        </li>
+                        <li class="n2">
+                            <a href="">
+                                <i class="icon"><span></span></i>
+                                <div class="title">창업 설명회</div>
+                                <p>경영주와 함께 하는 <br>창업 설명회를 신청하세요.
+                                </p>
+                            </a>
+                        </li>
+                        <li class="n3">
+                            <a href="">
+                                <i class="icon"></i>
+                                <div class="title">창업 상담</div>
+                                <p>창업 전문 컨설턴트의 <br>상담을 받아보세요.
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="store scroll_ani">
+                <div class="wrap">
+                    <h2>매장찾기</h2>
+                    <div class="search">
+                        <form name="search_form" action="./" method="post">
+                            <fieldset>
+                                <legend>매장 검색</legend>
+                                <div class="search_input">
+                                    <label for="store_sch" class="skip">통합검색</label>
+                                    <input type="search" id="store_sch" class="search_bar" placeholder="매장명을 검색해주세요">
+                                </div>
+                                <input type="submit" class="search_btn" value="검색">
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="tag_box">
+                        <ul class="tag_list">
+                            <li><a href=""><span>24시간</span></a></li>
+                            <li><a href=""><span>택배</span></a></li>
+                            <li><a href=""><span>ATM</span></a></li>
+                            <li><a href=""><span>와인</span></a></li>
+                            <li><a href=""><span>커피</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="app scroll_ani">
+                <div class="wrap">
+                    <div class="img_box"><img src="./images/app_Img.png" alt="이마트24 앱 이미지"></div>
+                    <div class="text_box">
+                        <div class="title_box">
+                            <span>우주편의점</span>
+                            <h2>“놀아 버는” 편의점<br>
+                                지구에 없던 FUN의점</h2>
+                        </div>
+                        <a href="" class="more">자세히 보기</a>
+                        <div class="down_box">
+                            <a href=""><span>앱 다운로드</span></a>
+                            <p>이마트24 신규 앱 다운로드 하세요!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="story scroll_ani clearfix ">
+                <div class="wrap">
+                    <div class="title_box">
+                        <h2><em>이마트24</em>STORY</h2>
+                        <span>이마트24의 다양한 스토리를 확인해 보세요.</span>
+                        <ul class="sns_list">
+                            <li class="youtube"><a href="" target="_blank" title="새창" rel="noopener noreferrer"><span>유튜브
+                                        바로가기</span></a></li>
+                            <li class="insta"><a href="" target="_blank" title="새창" rel="noopener noreferrer"><span>인스타그램
+                                        바로가기</span></a></li>
+                            <li class="facebook"><a href="" target="_blank" title="새창" rel="noopener noreferrer"><span>페이스북
+                                        바로가기</span></a></li>
+                            <li class="tictok"><a href="" target="_blank" title="새창" rel="noopener noreferrer"><span>틱톡
+                                        바로가기</span></a></li>
+                        </ul>
+                    </div>
+                    
+                    
+                    <div class="sns_slide">
+                        <div class="slide_list even">
+                            <div class="slide_item insta">
+                                <a href="">
+                                    <div class="img_box"><span style="background-image:url(./images/sns1.png);"></span>
+                                    </div>
+                                    <div class="text_box">
+                                        <div class="title">
+                                            <i class="icon"></i>
+                                            <span>INSTAGRAM</span>
+                                            <p>지구인들! 이번 주 신상배달 기다렸둥?🙈</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="slide_item youtube">
+                                <a href="">
+                                    <div class="img_box"><span style="background-image:url(./images/sns2.png);"></span>
+                                    </div>
+                                    <div class="text_box">
+                                        <div class="title">
+                                            <i class="icon"></i>
+                                            <span>YOUTUBE</span>
+                                            <p>[단독] 래원, 회사에서 게임하다 직원들과 결국.....더욱 돈독..💛</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="slide_item insta">
+                                <a href="">
+                                    <div class="img_box"><span style="background-image:url(./images/sns3.png);"></span>
+                                    </div>
+                                    <div class="text_box">
+                                        <div class="title">
+                                            <i class="icon"></i>
+                                            <span>INSTAGRAM</span>
+                                            <p>프로 운동러들 모여라! 프로틴 N+1 상품 모음😎</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="slide_item youtube">
+                                <a href="">
+                                    <div class="img_box"><span style="background-image:url(./images/sns2.png);"></span>
+                                    </div>
+                                    <div class="text_box">
+                                        <div class="title">
+                                            <i class="icon"></i>
+                                            <span>YOUTUBE</span>
+                                            <p>[단독] 래원, 회사에서 게임하다 직원들과 결국.....더욱 돈독..💛</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="slide_item insta">
+                                <a href="">
+                                    <div class="img_box"><span style="background-image:url(./images/sns3.png);"></span>
+                                    </div>
+                                    <div class="text_box">
+                                        <div class="title">
+                                            <i class="icon"></i>
+                                            <span>INSTAGRAM</span>
+                                            <p>프로 운동러들 모여라! 프로틴 N+1 상품 모음😎</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="control_box">
+                            <button type="button" class="prev">이전</button>
+                            <button type="button" class="next">다음</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="media scroll_ani clearfix">
+                <div class="wrap">
+                    <div class="notice media_item">
+                        <h2>공지사항</h2>
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <span class="text">개인정보처리방침 개정 안내(2023.02.21)</span>
+                                    <span class="time">2023.02.14</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="text">기준일 설정 공고</span>
+                                    <span class="time">2022.12.16</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="text">개인정보처리방침 개정 안내(2022.09.13)</span>
+                                    <span class="time">2022.09.05</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="" class="more">전체보기</a>
+                    </div>
+                    <div class="news media_item">
+                        <h2>보도자료</h2>
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <span class="text">이마트24, 대한민국 편의점 최초 싱가포르 진출!</span>
+                                    <span class="time">2022.12.23</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="text">이마트24, 혁신적인 모바일앱 우수성 입증! `스마트앱어워드 2022` 종합쇼핑 부문 대상 수상!</span>
+                                    <span class="time">2022.12.21</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <span class="text">이마트24 X bhc, `안 사면 손해` 파티팩 한정 판매</span>
+                                    <span class="time">2022.12.20</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="" class="more">전체보기</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- //#container -->
+        <footer id="footer">
+            <div class="wrap">
+                <div class="footer_top">
+                    <ul class="footer_link">
+                        <li class="privacy"><a href="">개인정보 처리방침</a></li>
+                        <li><a href="">이용약관</a></li>
+                        <li><a href="">고객센터</a></li>
+                        <li><a href="">CSR경영</a></li>
+                        <li><a href="">사이트맵</a></li>
+                    </ul>
+                    <div class="family_site">
+                        <button class="family_btn" title="패밀리사이트 열기"><span>패밀리사이트</span></button>
+                        <div class="layer">
+                            <ul>
+                                <li><a href="">신세계그룹</a></li>
+                                <li><a href="">신세계백화점</a></li>
+                                <li><a href="">이마트</a></li>
+                                <li><a href="">신세계인터내셔날</a></li>
+                                <li><a href="">신세계푸드</a></li>
+                                <li><a href="">신세계건설</a></li>
+                                <li><a href="">신세계I&C</a></li>
+                                <li><a href="">SCK컴퍼니</a></li>
+                                <li><a href="">조선호텔앤리조트</a></li>
+                                <li><a href="">신세계사이먼</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_bottom">
+                    <div class="footer_con">
+                        <span class="title">(주) 이마트24</span>
+                        <span class="text">대표이사 : 김장욱 / 사업자등록번호 : 105-86-92454<br>
+                            서울특별시 성동구 성수동 2가 281-4 푸조비즈타워 / 고객센터: 02-6916-1500 / Fax: 02-6916-1430<br>
+                            COPYRIGHT (C) EMART24.ALL RIGHT RESERVED</span>
+                    </div>
+                    <div class="sns_box">
+                        <ul>
+                            <li class="youtube"><a href="" target="_blank" title="새창" rel="noopener noreferrer"><span>유튜브
+                                        바로가기</span></a></li>
+                            <li class="insta"><a href="" target="_blank" title="새창" rel="noopener noreferrer"><span>인스타그램
+                                        바로가기</span></a></li>
+                            <li class="facebook"><a href="" target="_blank" title="새창" rel="noopener noreferrer"><span>페이스북
+                                        바로가기</span></a></li>
+                            <li class="tictok"><a href="" target="_blank" title="새창" rel="noopener noreferrer"><span>틱톡
+                                        바로가기</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

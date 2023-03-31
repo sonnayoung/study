@@ -1,0 +1,111 @@
+
+@mixin ellipsis($line: 1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @if ($line == 1) {
+      white-space: nowrap;
+    } @else {
+      display: -webkit-box;
+      -webkit-line-clamp: $line;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+ // 단일 배경 이미지
+@mixin bg_img($size: null, $url: null) {
+    background-image: url($url);
+    background-position: center center;
+    background-size: $size;
+    background-repeat: no-repeat;
+}
+// sprite 이미지
+@mixin sprite_img($width:0, $height:0, $url: null, $position:0 0) {
+  width: $width;
+  height: $height;
+  background-image: url($url);
+  background-position: $position;
+  background-repeat: no-repeat;
+}
+ //style로 이미지 배경쓸때
+ @mixin style_bg{
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  font-size: 0;
+  line-height: 0;
+ }
+
+  //h2 폰트사이즈
+  @mixin h2FontSize{
+    font-size:48px;
+    line-height:50px;
+    @include desktop1280 {
+      font-size:38px;
+      line-height:40px;
+    }
+    @include mobile {
+      font-size:18px;
+      line-height:28px;
+    }
+  }
+
+ //more 버튼
+ @mixin more{
+  position: absolute;
+  padding-right:33px;
+  font-size:15px;
+  line-height:24px;
+  color:$BasicColor;
+  font-weight:500;
+  &:hover{
+      color: $BrandColorYellow;
+  }
+  &:after{
+      display:block;
+      position: absolute;
+      top:0;
+      right:0;
+      @include sprite_img(24px, 24px, '../images/main_sprite.png' , -69px -2px)
+
+  }
+  @include mobile {
+    top:16px;
+    right:16px;
+    padding-right:20px;
+    font-size:12px;
+    &:after{
+      transform: scale(0.59);
+      transform-origin: right;
+    }
+  }
+ }
+
+ //노란버튼
+ @mixin yellowBtn{
+  width:196px;
+  height: 58px;
+  padding:16px 24px;
+  background-color: $BrandColorYellow;
+  color: $Black;
+  border-radius:12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  font-size:16px;
+  line-height:24px;
+  text-align:center;
+ }
+
+  //섹션 애니메이션
+  @mixin sectionAni{
+    opacity: 0;
+    transform: translateY(200px);
+    transition: all 0.7s ease;
+    &[data-on=on]{
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  //섹션 애니메이션 리셋
+  @mixin aniReset{
+    opacity: 1;
+    transform: translate(0);
+  }

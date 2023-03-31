@@ -1,0 +1,55 @@
+/*반응형 화면 크기*/
+$mobile640: 640px;
+$mobile: 800px;
+$tablet: 1000px;
+$desktop1280: 1280px;
+$desktop1440: 1440px;
+
+/*반응형, 브라우저 크기가 1001px 이상일때*/
+@mixin onlyPC{
+    @media (min-width: $tablet ){
+        @content;
+    }
+}
+/*반응형, 브라우저 크기가 1400px 이하일때*/
+@mixin desktop1440{
+    @media (max-width: $desktop1440){
+        @content;
+    }
+}
+/*반응형, 브라우저 크기가 1280px 이하일때*/
+@mixin desktop1280{
+    @media (max-width: $desktop1280){
+        @content;
+    }
+}
+/*반응형, 브라우저 크기가 1000px 이하일때*/
+@mixin tablet{
+    @media (max-width: $tablet){
+        @content;
+    }
+}
+/*반응형, 브라우저 크기가 800px 이하일때*/
+@mixin mobile{
+    @media (max-width: $mobile){
+        @content;
+    }
+}
+/*반응형, 브라우저 크기가 640px 이하일때*/
+@mixin mobile640{
+    @media (max-width: $mobile640){
+        @content;
+    }
+}
+  
+
+// 컬러
+$BrandColorYellow:#f9bb00;
+$BasicColor:#333;
+$White:#fff;
+$Black:#000;
+$gray:#999;
+
+ 
+  
+  

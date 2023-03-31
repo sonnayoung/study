@@ -27,14 +27,6 @@ a:active {
     color: #555;
     text-decoration: none;
 }
-input, textarea, button {
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    border-radius: 0;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-}
 
 #wrapper {
     position: relative;
@@ -518,7 +510,6 @@ body {
 }
 
 .only_emart {
-    overflow: hidden;
     margin-top: 155px;
     @include sectionAni;
     .title_box {
@@ -658,7 +649,7 @@ body {
 @include mobile {
     .only_emart{margin-top:90px;}
     .only_emart .title_box span{display: none;}
-    .only_emart .only_slide .slick-list {padding:20px 20% 80px !important;}
+    .only_emart .only_slide .slick-list {padding:20px 20% 80px;}
     .only_emart .only_slide .slide_item{opacity:1;}
     .only_emart .only_slide .slide_item.slick-active{opacity:1;}
     .only_emart .only_slide .slide_item a .img_box{height:50vw;}
@@ -1203,7 +1194,6 @@ body {
 }
 
 .story{
-    overflow: hidden;
     margin-top:125px;
     @include sectionAni;
     .slide_item{
