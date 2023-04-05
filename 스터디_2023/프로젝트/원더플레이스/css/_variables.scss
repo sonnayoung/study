@@ -3,7 +3,7 @@ $mobile640: 640px;
 $mobile: 800px;
 $tablet: 1000px;
 $desktop1280: 1280px;
-$desktop1440: 1440px;
+$desktop1590: 1590px;
 
 /*반응형, 브라우저 크기가 1001px 이상일때*/
 @mixin onlyPC{
@@ -12,7 +12,7 @@ $desktop1440: 1440px;
     }
 }
 /*반응형, 브라우저 크기가 1400px 이하일때*/
-@mixin desktop1440{
+@mixin desktop1590{
     @media (max-width: $desktop1440){
         @content;
     }
@@ -44,8 +44,7 @@ $desktop1440: 1440px;
   
 
 // 컬러
-$BrandColorYellow:#f9bb00;
-$BasicColor:#333;
+$BrandColorBlack:#131313;
 $White:#fff;
 $Black:#000;
 $gray:#999;

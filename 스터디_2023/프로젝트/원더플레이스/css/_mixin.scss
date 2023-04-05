@@ -37,8 +37,8 @@
 
   //h2 폰트사이즈
   @mixin h2FontSize{
-    font-size:48px;
-    line-height:50px;
+    font-size:50px;
+    line-height:60px;
     @include desktop1280 {
       font-size:38px;
       line-height:40px;
@@ -49,50 +49,8 @@
     }
   }
 
- //more 버튼
- @mixin more{
-  position: absolute;
-  padding-right:33px;
-  font-size:15px;
-  line-height:24px;
-  color:$BasicColor;
-  font-weight:500;
-  &:hover{
-      color: $BrandColorYellow;
-  }
-  &:after{
-      display:block;
-      position: absolute;
-      top:0;
-      right:0;
-      @include sprite_img(24px, 24px, '../images/main_sprite.png' , -69px -2px)
 
-  }
-  @include mobile {
-    top:16px;
-    right:16px;
-    padding-right:20px;
-    font-size:12px;
-    &:after{
-      transform: scale(0.59);
-      transform-origin: right;
-    }
-  }
- }
 
- //노란버튼
- @mixin yellowBtn{
-  width:196px;
-  height: 58px;
-  padding:16px 24px;
-  background-color: $BrandColorYellow;
-  color: $Black;
-  border-radius:12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
-  font-size:16px;
-  line-height:24px;
-  text-align:center;
- }
 
   //섹션 애니메이션
   @mixin sectionAni{
