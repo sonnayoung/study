@@ -1,14 +1,14 @@
 @charset "UTF-8";
 
 
-body{position:relative; line-height:25px; color:#555555; font-size:16px; font-family:'NotoKr','Malgun Gothic','맑은 고딕',Dotum,'돋움',Helvetica,AppleSDGothicNeo,sans-serif; letter-spacing:-0.03em;}
-a:link{color:#555555;text-decoration:none;}
-a:visited{color:#555555;text-decoration:none;}
-a:hover{color:#555555;text-decoration:underline;}
-a:active{color:#555555;text-decoration:underline;}
+body{position:relative; line-height:25px; color:#131313; font-size:16px; font-family:'Poppins','Pretendard','Malgun Gothic','맑은 고딕',Dotum,'돋움',Helvetica,AppleSDGothicNeo,sans-serif; letter-spacing:-0.03em;}
+a:link{color:#131313;text-decoration:none;}
+a:visited{color:#131313;text-decoration:none;}
+a:hover{color:#131313;text-decoration:underline;}
+a:active{color:#131313;text-decoration:underline;}
 a span{cursor:pointer;}
-button{cursor:pointer; font-family:'Noto Sans KR','Malgun Gothic','맑은 고딕',Dotum,'돋움',Helvetica,AppleSDGothicNeo,sans-serif;}
-input{font-family:'NotoKr','Malgun Gothic','맑은 고딕',Dotum,'돋움',Helvetica,AppleSDGothicNeo,sans-serif;}
+button{cursor:pointer; font-family:'Poppins','Pretendard','Malgun Gothic','맑은 고딕',Dotum,'돋움',Helvetica,AppleSDGothicNeo,sans-serif;}
+input{font-family:'Poppins','Pretendard','Malgun Gothic','맑은 고딕',Dotum,'돋움',Helvetica,AppleSDGothicNeo,sans-serif;}
 input[type="submit"]{cursor:pointer;}
 
 /* Slider */

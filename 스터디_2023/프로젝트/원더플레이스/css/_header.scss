@@ -1,16 +1,16 @@
 @charset "UTF-8";
 header{
     position: relative;
-   
+    width:100%;
+    height:120px;
+    background-color: #db9292;
+    z-index: 20;
+    transition: all ease 0.2s;
 }
 .fixed header{
     position: fixed;
     left: 0;
-    transform: translateY(-25px);
-    &::before{
-        backdrop-filter: blur(5px);
-        background-color: rgba(255,255,255,0.5);
-    }
+    transform: translateY(-20px);
 }
 h1{font-size: 0;line-height: 0;}
 .accessibility{
@@ -37,13 +37,32 @@ h1{font-size: 0;line-height: 0;}
 
 .logo{
     position: absolute;
+    top:60px
     
 }
 
 .gnb {
     position: relative;
-    
-    
+    height: 100%;
+    ul{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%;
+        li{
+            
+            margin: 0 25px;
+            a{
+                font-size:18px;
+                line-height:40px;
+                font-weight:600;
+                color:$BrandColorBlack;
+            }
+        }
+    }
+
 }
+
+.lnb{display: none;}
 
 

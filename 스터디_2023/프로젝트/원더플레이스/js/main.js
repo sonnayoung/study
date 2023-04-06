@@ -21,7 +21,47 @@ try {
 					} else {
 						$('html').removeClass("fixed");
 					}
-				})
+				});
+
+
+				var $visual = $('.visual'),
+					$visualSlide = $visual.find('.slide_list'),
+					$visualControl = $visual.find('.slide_control');
+
+				$visualSlide.slick({
+					autoplay: true,
+					arrows:true,
+					dots: false,
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					autoplaySpeed: 5000,
+					infinite: false,
+					swipe: false,
+					draggable: false,
+					prevArrow: $visualControl.find('.prev'),
+					nextArrow: $visualControl.find('.next'),
+					responsive: [
+						{
+							breakpoint: 1001,
+							settings: {
+								swipe: true,
+								draggable: true,
+								swipeToSlide: true,
+							}
+						},
+						{
+							breakpoint: 801,
+							settings: {
+								swipe: true,
+								draggable: true,
+								swipeToSlide: true,
+								centerMode: true,
+								initialSlide: 1,
+								slidesToShow: 1,
+							}
+						}
+					]
+				});
 
 	
 
