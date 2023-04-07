@@ -10,7 +10,10 @@ header{
 .fixed header{
     position: fixed;
     left: 0;
-    transform: translateY(-20px);
+    height:100px;
+    .logo{
+        transform: translateY(-20px);
+    }
 }
 h1{font-size: 0;line-height: 0;}
 .accessibility{
@@ -37,26 +40,45 @@ h1{font-size: 0;line-height: 0;}
 
 .logo{
     position: absolute;
-    top:60px
+    top:55px;
+    transition: all ease 0.2s;
     
 }
 
 .gnb {
     position: relative;
     height: 100%;
-    ul{
+    .wrap{
         display: flex;
         justify-content: flex-end;
         align-items: center;
         height: 100%;
+    }
+    ul{
+        display: flex;
+        align-items: center;
         li{
-            
             margin: 0 25px;
             a{
                 font-size:18px;
                 line-height:40px;
                 font-weight:600;
                 color:$BrandColorBlack;
+                &:after{
+                    display: block;
+                    width:0;
+                    height:3px;
+                    background-color: $BrandColorBlack;
+                    opacity: 0;
+                    transition: all 0.5s ease;
+                }
+                
+            }
+            &:hover{
+                a:after{
+                    width:100%;
+                    opacity: 1;
+                }
             }
         }
     }

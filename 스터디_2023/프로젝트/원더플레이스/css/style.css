@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700&display=swap");
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
 /*반응형 화면 크기*/
 /*반응형, 브라우저 크기가 1001px 이상일때*/
@@ -10,7 +10,9 @@
 /*반응형, 브라우저 크기가 640px 이하일때*/
 header { position: relative; width: 100%; height: 120px; background-color: #db9292; z-index: 20; -webkit-transition: all ease 0.2s; transition: all ease 0.2s; }
 
-.fixed header { position: fixed; left: 0; -webkit-transform: translateY(-20px); transform: translateY(-20px); }
+.fixed header { position: fixed; left: 0; height: 100px; }
+
+.fixed header .logo { -webkit-transform: translateY(-20px); transform: translateY(-20px); }
 
 h1 { font-size: 0; line-height: 0; }
 
@@ -20,15 +22,21 @@ h1 { font-size: 0; line-height: 0; }
 
 .accessibility a:focus { height: auto; padding-top: 5px; padding-bottom: 5px; background-color: #000; color: #fff; }
 
-.logo { position: absolute; top: 60px; }
+.logo { position: absolute; top: 55px; -webkit-transition: all ease 0.2s; transition: all ease 0.2s; }
 
 .gnb { position: relative; height: 100%; }
 
-.gnb ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 100%; }
+.gnb .wrap { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 100%; }
+
+.gnb ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
 .gnb ul li { margin: 0 25px; }
 
 .gnb ul li a { font-size: 18px; line-height: 40px; font-weight: 600; color: #131313; }
+
+.gnb ul li a:after { display: block; width: 0; height: 3px; background-color: #131313; opacity: 0; -webkit-transition: all 0.5s ease; transition: all 0.5s ease; }
+
+.gnb ul li:hover a:after { width: 100%; opacity: 1; }
 
 .lnb { display: none; }
 
@@ -61,9 +69,9 @@ section h2 { margin-bottom: 20px; font-size: 16px; line-height: 30px; letter-spa
 
 section h3 { margin-bottom: 60px; font-size: 70px; line-height: 80px; }
 
-.visual .title_box { position: absolute; z-index: 5; }
+.visual .title_box { position: absolute; top: 138px; left: 20%; right: 10%; z-index: 5; }
 
-.visual .title_box .title { margin-bottom: 60px; font-size: 80px; line-height: 100px; font-weight: 200; }
+.visual .title_box .title { margin-bottom: 60px; font-size: 80px; line-height: 100px; font-weight: 200; letter-spacing: -3px; }
 
 .visual .title_box .title span { display: block; font-weight: 200; }
 
@@ -81,7 +89,21 @@ section h3 { margin-bottom: 60px; font-size: 70px; line-height: 80px; }
 
 .visual .slide_list .slide_item a .img_box { width: 100%; height: 100%; background-repeat: no-repeat; background-position: center center; background-size: cover; font-size: 0; line-height: 0; }
 
-.visual .slide_control { font-size: 0; line-height: 0; }
+.visual .slick-dots { position: absolute; top: 154px; left: 0; }
+
+.visual .slick-dots li { display: -webkit-box; display: -ms-flexbox; display: flex; margin-bottom: 9px; }
+
+.visual .slick-dots li button { position: relative; padding-left: 30px; font-size: 18px; line-height: 30px; color: #131313; font-weight: 300; letter-spacing: 1px; }
+
+.visual .slick-dots li button::before { display: block; position: absolute; left: 0; top: calc(50% - 2px); width: 10px; height: 3px; background-color: #999; -webkit-transition: all 0.2s ease; transition: all 0.2s ease; }
+
+.visual .slick-dots li.slick-active button { font-weight: 600; }
+
+.visual .slick-dots li.slick-active button::before { width: 20px; background-color: #131313; }
+
+.visual .slick-dots li:last-child { margin-bottom: 0; }
+
+.visual .slide_control { position: absolute; top: 350px; right: 10%; font-size: 0; line-height: 0; }
 
 .visual .slide_control button { position: relative; width: 80px; height: 80px; background-color: #131313; }
 

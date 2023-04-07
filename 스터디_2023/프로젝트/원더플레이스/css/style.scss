@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700&display=swap');
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
 @import './_variables.scss', './_mixin.scss';
 @import './_header.scss', '_footer.scss';
@@ -91,12 +91,16 @@ section{
 .visual{
     .title_box{
         position: absolute;
+        top: 138px;
+        left:20%;
+        right:10%;
         z-index: 5;
         .title{
             margin-bottom:60px;
             font-size:80px;
             line-height:100px;
             font-weight: 200;
+            letter-spacing:-3px;
             span{
                 display: block;
                 font-weight: 200;
@@ -131,7 +135,52 @@ section{
             }
         }
     }
+    .slick-dots{
+        position: absolute;
+        top:154px;
+        left:0;
+        li{
+            display: flex;
+            margin-bottom:9px;
+            button{
+                position: relative;
+                padding-left:30px;
+                font-size:18px;
+                line-height:30px;
+                color:$BrandColorBlack;
+                font-weight:300;
+                letter-spacing: 1px;
+                &::before{
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top:calc(50% - 2px);
+                    width:10px;
+                    height:3px;
+                    background-color:#999;
+                    transition: all 0.2s ease;
+                }
+            }
+
+            &.slick-active{
+                button{
+                    font-weight:600;
+                    &::before{
+                        width:20px;
+                        background-color:$BrandColorBlack;
+                    }
+                }
+            }
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+        
+    }
     .slide_control{
+        position:absolute;
+        top:350px;
+        right: 10%;
         font-size:0;
         line-height:0;
         button{

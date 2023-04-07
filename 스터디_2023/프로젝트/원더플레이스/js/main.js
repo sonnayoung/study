@@ -31,7 +31,16 @@ try {
 				$visualSlide.slick({
 					autoplay: true,
 					arrows:true,
-					dots: false,
+					dots: true,
+		
+					customPaging: function(slider, i){
+						if(i < 9){
+							return '<button type="button" data-role="none" role="button" tabindex="0">0'+(i+1)+'</button>';
+						}else{
+							return '<button type="button" data-role="none" role="button" tabindex="0">'+(i+1)+'</button>';
+						}
+						
+					},
 					slidesToShow: 1,
 					slidesToScroll: 1,
 					autoplaySpeed: 5000,
