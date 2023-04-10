@@ -89,6 +89,7 @@ section{
 }
 
 .visual{
+    padding-top:120px;
     .title_box{
         position: absolute;
         top: 138px;
@@ -214,3 +215,35 @@ section{
     }
 }
 
+
+.sns{
+    position: fixed;
+    left: 0;
+    bottom:50px;
+    ul{
+        display:flex;
+        flex-direction:column;
+        li{
+            a{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                width:30px;
+                height:30px;
+                font-size:0;
+                line-height:0;
+                &::before{
+                    display: block;
+                    @include sprite_img(30px, 30px, '../images/icon_sns.svg', $position:left top);
+                    background-size: 200% auto;
+
+                }
+            }
+            &:hover{
+                a{
+                    background-color: #000;;
+                }
+            }
+        }
+    }
+}

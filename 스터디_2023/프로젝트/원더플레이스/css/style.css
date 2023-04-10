@@ -8,9 +8,9 @@
 /*반응형, 브라우저 크기가 1000px 이하일때*/
 /*반응형, 브라우저 크기가 800px 이하일때*/
 /*반응형, 브라우저 크기가 640px 이하일때*/
-header { position: relative; width: 100%; height: 120px; background-color: #db9292; z-index: 20; -webkit-transition: all ease 0.2s; transition: all ease 0.2s; }
+header { position: fixed; width: 100%; height: 120px; background-color: #db9292; z-index: 20; -webkit-transition: all ease 0.2s; transition: all ease 0.2s; }
 
-.fixed header { position: fixed; left: 0; height: 100px; }
+.fixed header { left: 0; height: 100px; }
 
 .fixed header .logo { -webkit-transform: translateY(-20px); transform: translateY(-20px); }
 
@@ -69,6 +69,8 @@ section h2 { margin-bottom: 20px; font-size: 16px; line-height: 30px; letter-spa
 
 section h3 { margin-bottom: 60px; font-size: 70px; line-height: 80px; }
 
+.visual { padding-top: 120px; }
+
 .visual .title_box { position: absolute; top: 138px; left: 20%; right: 10%; z-index: 5; }
 
 .visual .title_box .title { margin-bottom: 60px; font-size: 80px; line-height: 100px; font-weight: 200; letter-spacing: -3px; }
@@ -112,4 +114,14 @@ section h3 { margin-bottom: 60px; font-size: 70px; line-height: 80px; }
 .visual .slide_control button:hover::before { opacity: 0.5; }
 
 .visual .slide_control .prev::before { -webkit-transform: rotate(-135deg); transform: rotate(-135deg); left: calc(50% - 5px); }
+
+.sns { position: fixed; left: 0; bottom: 50px; }
+
+.sns ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
+
+.sns ul li a { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 30px; height: 30px; font-size: 0; line-height: 0; }
+
+.sns ul li a::before { display: block; width: 30px; height: 30px; background-image: url("../images/icon_sns.svg"); background-position: left top; background-repeat: no-repeat; background-size: 200% auto; }
+
+.sns ul li:hover a { background-color: #000; }
 /*# sourceMappingURL=style.css.map */
