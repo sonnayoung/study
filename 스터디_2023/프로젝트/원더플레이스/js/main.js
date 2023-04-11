@@ -23,7 +23,7 @@ try {
 					}
 				});
 
-
+				//비주얼 슬라이드
 				var $visual = $('.visual'),
 					$visualSlide = $visual.find('.slide_list'),
 					$visualControl = $visual.find('.slide_control');
@@ -72,7 +72,20 @@ try {
 					]
 				});
 
-	
+				//타이틀 마우스 휠 애니메이션
+				$(window).on('mousewheel',function (){
+					var $titleAni = $('.title_ani'),
+						$title1 = $titleAni.find('.t1'),
+						$title2 = $titleAni.find('.t2'),
+						scrollTop = $(window).scrollTop() ,
+						DecoScrollTop  = $titleAni.offset().top - 800;
+						console.log(DecoScrollTop,scrollTop);
+					if (DecoScrollTop < scrollTop){
+						$title1.css({transform: 'translateX(-'+(scrollTop - DecoScrollTop)+'px)'})
+						$title2.css({transform: 'translateX('+(scrollTop - DecoScrollTop)+'px)'})
+					}
+
+				})
 
 			
 				

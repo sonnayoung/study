@@ -84,6 +84,34 @@ section{
         margin-bottom:60px;
         font-size:70px;
         line-height:80px;
+        letter-spacing:-3px;
+    }
+    .more{
+        position: relative;
+        padding: 0 90px 0 30px;
+        background-color:$BrandColorBlack;
+        color: $White;   
+        border: 1px solid $BrandColorBlack;
+        font-size:20px;
+        line-height:60px;
+        font-weight:700;
+        transition: all 0.2s ease;
+        &::before{
+            display: block;
+            position: absolute;
+            top:calc(50% - 1px);
+            right:30px;
+            width:40px;
+            height:3px;
+            background-color: $White;
+        }
+        &:hover{
+            background-color:$White;
+            color:$BrandColorBlack;
+            &::before{
+                background-color: $BrandColorBlack;
+            }
+        }
     }
     
 }
@@ -184,6 +212,7 @@ section{
         right: 10%;
         font-size:0;
         line-height:0;
+        z-index: 5;
         button{
             position: relative;
             width:80px;
@@ -215,35 +244,130 @@ section{
     }
 }
 
+.about{
+    margin-top:200px;
+    .wrap{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 156px;
+    }
+    .title_box{
+        p{
+            font-size:18px;
+            line-height:30px;
+        }
+    }
+    .img_box{
+        width: 500px;
+        margin-right:70px;
+    }
+    .more{
+        margin-top:95px;
+    }
+}
 
-.sns{
-    position: fixed;
-    left: 0;
-    bottom:50px;
-    ul{
-        display:flex;
-        flex-direction:column;
-        li{
-            a{
-                display:flex;
-                justify-content: center;
-                align-items: center;
-                width:30px;
-                height:30px;
-                font-size:0;
-                line-height:0;
-                &::before{
-                    display: block;
-                    @include sprite_img(30px, 30px, '../images/icon_sns.svg', $position:left top);
-                    background-size: 200% auto;
-
-                }
-            }
-            &:hover{
+.title_ani{
+    margin-top:180px;
+    p{
+        font-size:140px;
+        line-height:160px;
+        font-weight:400;
+        white-space: nowrap;
+        transition: all 0.2s ease;
+    }
+    .t1{
+        color: $BrandColorBlack;
+        opacity:0.1;
+        transform: translateX(500px);
+    }
+    .t2{
+        text-shadow:-1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+        color:$White;
+        opacity: 0.3;
+        transform: translateX(-500px);
+    }
+}
+.brand{
+    margin-top:300px;
+    .wrap{
+        padding:0 156px;
+    }
+}
+.util{
+    .sns{
+        position: fixed;
+        left: 3%;
+        bottom:50px;
+        ul{
+            display:flex;
+            flex-direction:column;
+            li{
+                margin-bottom:10px;
                 a{
-                    background-color: #000;;
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius:50%;
+                    width:30px;
+                    height:30px;
+                    font-size:0;
+                    line-height:0;
+                    transition: all 0.2s ease;
+                    &::before{
+                        display: block;
+                        @include sprite_img(30px, 30px, '../images/icon_sns.svg', left top);
+                        transition: all 0.2s ease;
+                    }
+                }
+                &:hover{
+                    a{
+                        background-color: #000;
+                        &::before{
+                            background-position:right top;
+                        }
+                    }
+                }
+                &.facebook{
+                    a:before{
+                        background-position:left top;
+                    }
+                    &:hover{
+                        a:before{
+                            background-position:right top;
+                        }
+                    }
+                }
+                &.insta{
+                    a:before{
+                        background-position: left 50%;
+                    }
+                    &:hover{
+                        a:before{
+                            background-position: right 50%;
+                        }
+                    }
+                }
+                &.youtube{
+                    a:before{
+                        background-position:left bottom;
+                    }
+                    &:hover{
+                        a:before{
+                            background-position:right bottom;
+                        }
+                    }
+                }
+                &:last-child{
+                    margin-bottom: 0;
                 }
             }
         }
     }
+    
+    .bottom_btn{
+        position: fixed;
+        right:3%;
+        bottom:50px;
+    }
 }
+

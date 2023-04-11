@@ -67,7 +67,15 @@ body { font-family: 'Poppins', 'Pretendard', sans-serif; font-size: 16px; }
 
 section h2 { margin-bottom: 20px; font-size: 16px; line-height: 30px; letter-spacing: 4px; }
 
-section h3 { margin-bottom: 60px; font-size: 70px; line-height: 80px; }
+section h3 { margin-bottom: 60px; font-size: 70px; line-height: 80px; letter-spacing: -3px; }
+
+section .more { position: relative; padding: 0 90px 0 30px; background-color: #131313; color: #fff; border: 1px solid #131313; font-size: 20px; line-height: 60px; font-weight: 700; -webkit-transition: all 0.2s ease; transition: all 0.2s ease; }
+
+section .more::before { display: block; position: absolute; top: calc(50% - 1px); right: 30px; width: 40px; height: 3px; background-color: #fff; }
+
+section .more:hover { background-color: #fff; color: #131313; }
+
+section .more:hover::before { background-color: #131313; }
 
 .visual { padding-top: 120px; }
 
@@ -105,7 +113,7 @@ section h3 { margin-bottom: 60px; font-size: 70px; line-height: 80px; }
 
 .visual .slick-dots li:last-child { margin-bottom: 0; }
 
-.visual .slide_control { position: absolute; top: 350px; right: 10%; font-size: 0; line-height: 0; }
+.visual .slide_control { position: absolute; top: 350px; right: 10%; font-size: 0; line-height: 0; z-index: 5; }
 
 .visual .slide_control button { position: relative; width: 80px; height: 80px; background-color: #131313; }
 
@@ -115,13 +123,55 @@ section h3 { margin-bottom: 60px; font-size: 70px; line-height: 80px; }
 
 .visual .slide_control .prev::before { -webkit-transform: rotate(-135deg); transform: rotate(-135deg); left: calc(50% - 5px); }
 
-.sns { position: fixed; left: 0; bottom: 50px; }
+.about { margin-top: 200px; }
 
-.sns ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
+.about .wrap { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; padding: 0 156px; }
 
-.sns ul li a { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 30px; height: 30px; font-size: 0; line-height: 0; }
+.about .title_box p { font-size: 18px; line-height: 30px; }
 
-.sns ul li a::before { display: block; width: 30px; height: 30px; background-image: url("../images/icon_sns.svg"); background-position: left top; background-repeat: no-repeat; background-size: 200% auto; }
+.about .img_box { width: 500px; margin-right: 70px; }
 
-.sns ul li:hover a { background-color: #000; }
+.about .more { margin-top: 95px; }
+
+.title_ani { margin-top: 180px; }
+
+.title_ani p { font-size: 140px; line-height: 160px; font-weight: 400; white-space: nowrap; -webkit-transition: all 0.2s ease; transition: all 0.2s ease; }
+
+.title_ani .t1 { color: #131313; opacity: 0.1; -webkit-transform: translateX(500px); transform: translateX(500px); }
+
+.title_ani .t2 { text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000; color: #fff; opacity: 0.3; -webkit-transform: translateX(-500px); transform: translateX(-500px); }
+
+.brand { margin-top: 300px; }
+
+.brand .wrap { padding: 0 156px; }
+
+.util .sns { position: fixed; left: 3%; bottom: 50px; }
+
+.util .sns ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
+
+.util .sns ul li { margin-bottom: 10px; }
+
+.util .sns ul li a { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; border-radius: 50%; width: 30px; height: 30px; font-size: 0; line-height: 0; -webkit-transition: all 0.2s ease; transition: all 0.2s ease; }
+
+.util .sns ul li a::before { display: block; width: 30px; height: 30px; background-image: url("../images/icon_sns.svg"); background-position: left top; background-repeat: no-repeat; -webkit-transition: all 0.2s ease; transition: all 0.2s ease; }
+
+.util .sns ul li:hover a { background-color: #000; }
+
+.util .sns ul li:hover a::before { background-position: right top; }
+
+.util .sns ul li.facebook a:before { background-position: left top; }
+
+.util .sns ul li.facebook:hover a:before { background-position: right top; }
+
+.util .sns ul li.insta a:before { background-position: left 50%; }
+
+.util .sns ul li.insta:hover a:before { background-position: right 50%; }
+
+.util .sns ul li.youtube a:before { background-position: left bottom; }
+
+.util .sns ul li.youtube:hover a:before { background-position: right bottom; }
+
+.util .sns ul li:last-child { margin-bottom: 0; }
+
+.util .bottom_btn { position: fixed; right: 3%; bottom: 50px; }
 /*# sourceMappingURL=style.css.map */
