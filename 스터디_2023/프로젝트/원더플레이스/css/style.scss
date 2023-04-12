@@ -6,17 +6,17 @@
 
 /* 초기화 */
 a:link {
-    color: #555;
+    color: $BrandColorBlack;
     text-decoration: none;
 }
 
 a:visited {
-    color: #555;
+    color: $BrandColorBlack;
     text-decoration: none;
 }
 
 a:hover {
-    color: #555;
+    color: $BrandColorBlack;
     text-decoration: none;
 }
 
@@ -25,7 +25,7 @@ a:focus {
 }
 
 a:active {
-    color: #555;
+    color: $BrandColorBlack;
     text-decoration: none;
 }
 
@@ -371,3 +371,7 @@ section{
     }
 }
 
+
+.contact{
+    background-color: #f5f5f5;
+}

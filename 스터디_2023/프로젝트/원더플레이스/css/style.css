@@ -40,18 +40,48 @@ h1 { font-size: 0; line-height: 0; }
 
 .lnb { display: none; }
 
-footer { position: relative; }
+footer { position: relative; padding: 60px 0; }
+
+footer .footer_wrap { display: -webkit-box; display: -ms-flexbox; display: flex; color: #131313; font-size: 15px; line-height: 40px; font-weight: 400; letter-spacing: 2px; }
+
+footer .footer_wrap > div { -ms-flex-preferred-size: 20%; flex-basis: 20%; }
+
+footer .footer_wrap .footer_sns a { font-size: 20px; font-weight: 600; color: #131313; letter-spacing: 2px; }
+
+footer .footer_wrap .footer_sns a:hover { text-decoration: underline; }
+
+footer .footer_wrap .copyright span { display: block; }
+
+footer .footer_wrap .copyright b { font-weight: 700; }
+
+footer .footer_wrap .footer_contact { -ms-flex-preferred-size: 40%; flex-basis: 40%; }
+
+footer .footer_wrap .footer_contact li .title { width: 160px; font-weight: 700; vertical-align: top; }
+
+footer .footer_wrap .footer_contact li a:hover { text-decoration: underline; }
+
+footer .footer_wrap .footer_contact li:last-child span:not(.title) { padding-top: 15px; line-height: 22px; }
+
+footer .footer_wrap .footer_info { letter-spacing: 0; }
+
+footer .footer_wrap .footer_info li a:hover { text-decoration: underline; }
+
+footer .top_btn { position: fixed; right: 50px; bottom: 50px; }
+
+footer .top_btn a { position: relative; width: 60px; height: 60px; background-color: #131313; font-size: 0; line-height: 0; }
+
+footer .top_btn a::before { display: block; position: absolute; top: calc(50% - 6px); left: calc(50% - 9px); width: 17px; height: 17px; border-top: 1px solid #fff; border-right: 1px solid #fff; -webkit-transform: rotate(-45deg); transform: rotate(-45deg); }
 
 /* 초기화 */
-a:link { color: #555; text-decoration: none; }
+a:link { color: #131313; text-decoration: none; }
 
-a:visited { color: #555; text-decoration: none; }
+a:visited { color: #131313; text-decoration: none; }
 
-a:hover { color: #555; text-decoration: none; }
+a:hover { color: #131313; text-decoration: none; }
 
 a:focus { text-decoration: underline; }
 
-a:active { color: #555; text-decoration: none; }
+a:active { color: #131313; text-decoration: none; }
 
 #wrapper { position: relative; max-width: 1920px; min-width: 1590px; overflow: hidden; margin: 0 auto; }
 
@@ -174,4 +204,6 @@ section .more:hover::before { background-color: #131313; }
 .util .sns ul li:last-child { margin-bottom: 0; }
 
 .util .bottom_btn { position: fixed; right: 3%; bottom: 50px; }
+
+.contact { background-color: #f5f5f5; }
 /*# sourceMappingURL=style.css.map */

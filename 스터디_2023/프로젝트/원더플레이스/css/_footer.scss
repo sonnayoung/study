@@ -2,6 +2,91 @@
 
 footer{
     position: relative;
-    
+    padding:60px 0;
+    .footer_wrap{
+        display: flex;
+        color: $BrandColorBlack;
+        font-size:15px;
+        line-height:40px;
+        font-weight:400;
+        letter-spacing:2px;
+        & > div{
+            flex-basis: 20%;
+        }
+        .footer_sns{
+            a{
+                font-size:20px;
+                font-weight:600;
+                color: $BrandColorBlack;
+                letter-spacing:2px;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+        .copyright{
+            span{
+                display: block;
+                
+            }
+            b{
+                font-weight:700;
+            }
+        }
+        .footer_contact{
+            flex-basis: 40%;
+            li{
+                .title{
+                    width:160px;
+                    font-weight:700;
+                    vertical-align: top;
+                }
+                a{
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+                &:last-child{
+                    span:not(.title){
+                        padding-top:15px;
+                        line-height: 22px;
+                    }
+                }
+            }
+        }
+        .footer_info{
+            letter-spacing: 0;
+            li{
+                a:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
     }
+    .top_btn{
+        position: fixed;
+        right:50px;
+        bottom:50px;
+        a{
+            position: relative;
+            width:60px;
+            height:60px;
+            background-color: $BrandColorBlack;
+            font-size:0;
+            line-height:0;
+            &::before{
+                display: block;
+                position: absolute;
+                top: calc(50% - 6px);
+                left: calc(50% - 9px);
+                width:17px;
+                height:17px;
+                border-top:1px solid $White;
+                border-right:1px solid $White;
+                transform: rotate(-45deg);
+            }
+        }
+       
+    }
+}
     
