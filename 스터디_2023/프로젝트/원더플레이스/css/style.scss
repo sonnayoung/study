@@ -292,6 +292,13 @@ section{
     .wrap{
         padding:0 156px;
     }
+    .title_box{
+        display: flex;
+        h2{
+            display: block;
+        }
+        
+    }
 }
 .util{
     .sns{
